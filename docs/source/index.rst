@@ -1,6 +1,5 @@
-Welcome to the Gal3D documentation! `Gal3D <https://github.com/GalaxySimAnalytics/gal3d>`_ is a Python library for three-dimensional morphological modeling and analysis of simulated galaxies.
-It is designed to quantify the 3D morphological properties of mass distributions from particle data and to help reveal how galaxy structure and morphology evolve in three dimensions.
-
+Welcome to the Gal3D documentation! `Gal3D <https://github.com/GalaxySimAnalytics/gal3d>`_ is a Python library for three-dimensional morphological modeling of simulated galaxies.
+It measures structural properties directly from particle data, including axis ratios, orientations, center offsets, and higher-order shape features.
 
 
 Installation
@@ -14,7 +13,7 @@ Clone the repository and install the package:
    cd gal3d
    pip install .
 
-For an editable installation, use:
+For editable development:
 
 .. code-block:: bash
 
@@ -28,7 +27,7 @@ Scientific Motivation
 The intrinsic three-dimensional shapes of galaxies encode important information about their formation and evolution. 
 In simulations, particle data provide direct access to the full 3D mass distribution, but robustly measuring radial variations in shape remains challenging.
 
-`Gal3D` is designed to address this problem. It combines density-field reconstruction, radial sampling, and superellipsoid fitting to model the 3D iso-density 
+``Gal3D`` is designed to address this problem. It combines density-field reconstruction, radial sampling, and superellipsoid fitting to model the 3D iso-density 
 structure of galaxies and to quantify quantities such as axis ratios, orientations, center offsets, and higher-order shape features.
 
 
