@@ -1,0 +1,10 @@
+sphinx
+sphinx-copybutton
+sphinx-book-theme
+myst-nb
+numpydoc
+ipython
+sphinx-intl
+sphinx-autobuild
+matplotlib
+git+https://github.com/GalaxySimAnalytics/gal3d.git@main
