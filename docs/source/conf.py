@@ -25,9 +25,13 @@ language = (
     or os.environ.get("SPHINX_LANGUAGE")
     or "en"
 )
+normalized_language = language.lower().replace("-", "_")
+is_chinese = normalized_language in {"zh_cn", "zh", "zh_hans"}
+
+current_language_code = "zh_CN" if is_chinese else "en"
 
 html_context = {
-    "current_language": language,
+    "current_language": current_language_code,
     "supported_languages": [
         {"code": "en", "label": "English"},
         {"code": "zh_CN", "label": "中文"},
@@ -38,7 +42,7 @@ html_context = {
 }
 
 # Set author based on language
-author = "卢帅" if language == "zh_CN" else "Shuai Lu"
+author = "卢帅 (Shuai Lu)"
 
 
 try:
@@ -181,14 +185,14 @@ html_theme = 'sphinx_book_theme'
     #"use_fullscreen_button": True,      # Show fullscreen button
 #}
 
-if language == 'zh_CN':
+if is_chinese:
     html_theme_options = {
         "repository_provider": "github",
         "repository_url": "https://github.com/GalaxySimAnalytics/gal3d",
         "use_repository_button": True,
         "path_to_docs": "docs/source",
         "show_toc_level": 2,
-        "announcement": "本文档正在建设中！",
+       # "announcement": "本文档正在建设中！",
         "logo": {
          "image_light": "logo-light.png",  # Logo image for light mode
          "image_dark": "logo-dark.png",    # Logo image for dark mode
@@ -201,7 +205,7 @@ else:
         "use_repository_button": True,
         "path_to_docs": "docs/source",
         "show_toc_level": 2,
-        "announcement": "This documentation is under active development!",
+      #  "announcement": "This documentation is under active development!",
         "logo": {
          "image_light": "logo-light.png",  # Logo image for light mode
          "image_dark": "logo-dark.png",    # Logo image for dark mode

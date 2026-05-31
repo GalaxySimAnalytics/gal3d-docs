@@ -1,75 +1,76 @@
+
 # gal3d-docs
 
-Documentation source for [gal3d](https://github.com/GalaxySimAnalytics/gal3d).
+[gal3d](https://github.com/GalaxySimAnalytics/gal3d) 的文档仓库。
 
-[中文](README_zh.md)
+[English](README.md)
 
-## Requirements
+## 环境要求
 
 - Python >= 3.11
 - `uv`
-- local `gal3d` source at `../gal3d`
+- 本地 `gal3d` 源码目录位于 `../gal3d`
 
-## Setup
-
-```bash
-make setup
-```
-
-## Common Commands
-
-Setup environment:
+## 初始化
 
 ```bash
 make setup
 ```
 
-Generate API pages:
+## 常用命令
+
+初始化环境：
+
+```bash
+make setup
+```
+
+生成 API 文档页面：
 
 ```bash
 make api
 ```
 
-Build English docs:
+构建英文文档：
 
 ```bash
 make docs
 ```
 
-Build Chinese docs:
+构建中文文档：
 
 ```bash
 make docs-zh
 ```
 
-Start live preview:
+启动实时预览：
 
 ```bash
 make live
 make live-zh
 ```
 
-Update translation catalogs:
+更新翻译条目：
 
 ```bash
 make i18n
 ```
 
-Compile translations:
+编译翻译文件：
 
 ```bash
 make -C docs compile-translations
 ```
 
-Clean build output:
+清理构建产物：
 
 ```bash
 make clean
 ```
 
-## Workflows
+## 工作流程
 
-Normal update:
+普通文档更新：
 
 ```bash
 make setup
@@ -77,7 +78,7 @@ make api
 make docs
 ```
 
-Translation update:
+翻译更新：
 
 ```bash
 make setup
@@ -86,7 +87,7 @@ make -C docs compile-translations
 make docs-zh
 ```
 
-RTD build steps:
+RTD 构建步骤：
 
 ```bash
 make api
