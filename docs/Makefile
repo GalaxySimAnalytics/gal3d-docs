@@ -44,11 +44,11 @@ help:
 
 # Build English HTML documentation, output to build/en
 html-en:
-	SPHINX_LANGUAGE=en $(SPHINXBUILD) -b html -D language=en $(SOURCEDIR) $(BUILDDIR)/en
+	SPHINX_LANGUAGE=en $(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=en $(SOURCEDIR) $(BUILDDIR)/en
 
 # Build Chinese HTML documentation, output to build/zh_CN
 html-zh:
-	SPHINX_LANGUAGE=zh_CN $(SPHINXBUILD) -b html -D language=zh_CN $(SOURCEDIR) $(BUILDDIR)/zh_CN
+	SPHINX_LANGUAGE=zh_CN $(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=zh_CN $(SOURCEDIR) $(BUILDDIR)/zh_CN
 
 
 # Extract English translation strings and update English po files
@@ -81,10 +81,10 @@ compile-translations:
 
 # Live preview of English documentation with auto-reload
 autobuild-en:
-	SPHINX_LANGUAGE=en $(SPHINXAUTOBUILD) -b html -D language=en $(SOURCEDIR) $(BUILDDIR)/en
+	SPHINX_LANGUAGE=en $(SPHINXAUTOBUILD) $(SPHINXOPTS) -b html -D language=en $(SOURCEDIR) $(BUILDDIR)/en
 
 # Live preview of Chinese documentation with auto-reload
 autobuild-zh:
-	SPHINX_LANGUAGE=zh_CN $(SPHINXAUTOBUILD) -b html -D language=zh_CN $(SOURCEDIR) $(BUILDDIR)/zh_CN
+	SPHINX_LANGUAGE=zh_CN $(SPHINXAUTOBUILD) $(SPHINXOPTS) -b html -D language=zh_CN $(SOURCEDIR) $(BUILDDIR)/zh_CN
 
 .PHONY: autobuild-en autobuild-zh
