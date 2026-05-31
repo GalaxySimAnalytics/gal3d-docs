@@ -25,11 +25,11 @@ PKG_PATH=$($RUNNER python -c "import os, gal3d; print(os.path.dirname(gal3d.__fi
 rm -rf reference/_autosummary
 
 # Generate API documentation rst files into the reference/_autosummary directory
-$SPHINX_APIDOC --separate -t _templates/apidoc -o reference/_autosummary "$PKG_PATH"
+$SPHINX_APIDOC --separate -o reference/_autosummary "$PKG_PATH"
 
 # Remove the generated modules.rst file since we will use index.rst to control the API documentation structure
 rm -f reference/_autosummary/modules.rst
 rm -f reference/_autosummary/gal3d.rst
 
 # Generate autosummary stub files from index.rst
-find reference -name "*.rst" -print0 | xargs -0 $SPHINX_AUTOGEN
+find reference -name "*.rst" -print0 | xargs -0 $SPHINX_AUTOGEN -t "$(pwd)/_templates"

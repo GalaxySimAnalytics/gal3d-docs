@@ -1,0 +1,585 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-26 13:27+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/step_by_step.ipynb:10004
+msgid "Step-by-Step Workflow"
+msgstr "分步工作流程"
+
+#: ../../source/tutorials/step_by_step.ipynb:10006
+#, python-brace-format
+msgid ""
+"`Gal3D` mainly uses the {py:class}`Gal3DAnalyzer "
+"<gal3d.analyzer.Gal3DAnalyzer>` class to build 3D galaxy models. "
+"Initializing {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` "
+"requires the following components:"
+msgstr ""
+"`Gal3D` 主要通过 {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` 类来构建三维星系模型。"
+"初始化 {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` 需要以下组件："
+
+#: ../../source/tutorials/step_by_step.ipynb:10008
+#, python-brace-format
+msgid ""
+"{py:class}`Particles <gal3d.point.Particles>`, which initializes the "
+"particle data and provides density estimates at arbitrary positions;"
+msgstr ""
+"{py:class}`Particles <gal3d.point.Particles>`，用于初始化粒子数据并提供任意位置的密度估计；"
+
+#: ../../source/tutorials/step_by_step.ipynb:10009
+#, python-brace-format
+msgid ""
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`, which "
+"constructs a smoothed density field and its associated interpolators from"
+" the particle data;"
+msgstr ""
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`，用于从粒子数据构建平滑的密度场及其相关插值器；"
+
+#: ../../source/tutorials/step_by_step.ipynb:10010
+#, python-brace-format
+msgid ""
+"{py:class}`Structure3D <gal3d.shape.Structure3D>`, which defines the "
+"target shape, the error function, and related settings;"
+msgstr ""
+"{py:class}`Structure3D <gal3d.shape.Structure3D>`，用于定义目标形状、误差函数和相关设置；"
+
+#: ../../source/tutorials/step_by_step.ipynb:10011
+#, python-brace-format
+msgid ""
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>`, which "
+"performs the parameter optimization."
+msgstr ""
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>`，用于执行参数优化。"
+
+
+#: ../../source/tutorials/step_by_step.ipynb:20004
+msgid "Particle Initialization"
+msgstr "粒子初始化"
+
+#: ../../source/tutorials/step_by_step.ipynb:20006
+msgid ""
+"The goal of particle initialization is to enable density estimation at "
+"arbitrary positions from a particle distribution defined by positions and"
+" masses."
+msgstr "粒子初始化的目标是：基于由位置和质量定义的粒子分布，在任意位置进行密度估计。"
+
+#: ../../source/tutorials/step_by_step.ipynb:20008
+#, python-brace-format
+msgid ""
+"This section shows how to initialize the particle positions and masses "
+"and construct a density-query object. The main class used here is "
+"{py:class}`Particles <gal3d.point.Particles>`."
+msgstr ""
+"本节展示如何初始化粒子位置与质量，并构建密度查询对象。这里使用的核心类是 {py:class}`Particles <gal3d.point.Particles>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:20010
+msgid ""
+"To initialize the particle data, you need to provide the particle "
+"positions (`pos`) and masses (`mass`). As in the previous examples, we "
+"use particle data from a galaxy in the TNG50-1 simulation."
+msgstr "要初始化粒子数据，需要提供粒子位置（`pos`）和质量（`mass`）。与前面的示例一样，我们使用来自 TNG50-1 模拟中某个星系的粒子数据。"
+
+#: ../../source/tutorials/step_by_step.ipynb:40002
+msgid "Initializing the `Particles` Class"
+msgstr "初始化 `Particles` 类"
+
+#: ../../source/tutorials/step_by_step.ipynb:40004
+#, python-brace-format
+msgid ""
+"Use the {py:class}`Particles <gal3d.point.Particles>` class to initialize"
+" the particle positions and masses. The position array `pos` has shape "
+"`(N, 3)`, and the mass array `mass` has shape `(N,)`, where `N` is the "
+"number of particles."
+msgstr ""
+"使用 {py:class}`Particles <gal3d.point.Particles>` 类来初始化粒子位置和质量。位置数组 `pos` 的形状为 `(N, 3)`，质量数组 `mass` 的形状为 `(N,)`，其中 `N` 是粒子数量。"
+
+#: ../../source/tutorials/step_by_step.ipynb:40008
+#, python-brace-format
+msgid ""
+"For a more detailed introduction to {py:class}`Particles "
+"<gal3d.point.Particles>`, including usage examples, see {ref}`Working "
+"with Particle Classes <particles>`."
+msgstr ""
+"关于 {py:class}`Particles <gal3d.point.Particles>` 的更详细介绍（包括使用示例），请参见 {ref}`使用粒子类 <particles>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:70004
+msgid "Constructing the Density Field"
+msgstr "构建密度场"
+
+#: ../../source/tutorials/step_by_step.ipynb:70006
+msgid ""
+"The purpose of this step is to build a density field once a density "
+"estimator is available for arbitrary positions. Because direct density "
+"queries can be computationally expensive, `Gal3D` constructs an "
+"intermediate field representation to reduce the cost of repeated "
+"evaluations."
+msgstr ""
+"本步骤的目的是：在能够对任意位置进行密度估计后，构建一个密度场。由于直接进行密度查询计算开销较大，`Gal3D` 会构建中间场表示，以降低重复评估的成本。"
+
+#: ../../source/tutorials/step_by_step.ipynb:70008
+#, python-brace-format
+msgid ""
+"Before constructing the density field, the particles must already be "
+"initialized so that the density estimator is available. See "
+"{ref}`Particle Initialization <particle-initialization>` for that step."
+msgstr ""
+"在构建密度场之前，必须先初始化粒子，以便能够使用密度估计器。请参见 {ref}`粒子初始化 <particle-initialization>` 了解该步骤。"
+
+#: ../../source/tutorials/step_by_step.ipynb:70010
+#, python-brace-format
+msgid ""
+"This section focuses on building the density field with the "
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>` class."
+msgstr ""
+"本节重点介绍如何使用 {py:class}`SphField <gal3d.field.spherical_field.field.SphField>` 类构建密度场。"
+
+
+#: ../../source/tutorials/step_by_step.ipynb:80002
+#, python-brace-format
+msgid ""
+"The `Sph` in {py:class}`SphField "
+"<gal3d.field.spherical_field.field.SphField>` stands for *spherical*."
+msgstr ""
+"`Sph` 在 {py:class}`SphField <gal3d.field.spherical_field.field.SphField>` 中代表 *spherical（球形）*。"
+
+#: ../../source/tutorials/step_by_step.ipynb:80004
+msgid ""
+"The basic idea of `SphField` is to cast rays outward from the center, "
+"sample how the density varies along each ray, and construct a radial "
+"density interpolator for each direction."
+msgstr ""
+"`SphField` 的基本思想是从中心向外发射射线，沿每条射线采样密度的变化，并为每个方向构建径向密度插值器。"
+
+#: ../../source/tutorials/step_by_step.ipynb:80006
+msgid "Directions of the Density Probes"
+msgstr "密度探针方向"
+
+#: ../../source/tutorials/step_by_step.ipynb:80008
+#, python-brace-format
+msgid ""
+"Pass the initialized {py:class}`Particles <gal3d.point.Particles>` object"
+" to {py:class}`SphField <gal3d.field.spherical_field.field.SphField>`."
+msgstr "将已初始化的 {py:class}`Particles <gal3d.point.Particles>` 对象传递给 {py:class}`SphField <gal3d.field.spherical_field.field.SphField>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:80010
+msgid ""
+"At the same time, specify the number of density probes and the sampling "
+"method used to choose their directions."
+msgstr "同时，需要指定密度探针的数量以及用于选择其方向的采样方法。"
+
+#: ../../source/tutorials/step_by_step.ipynb:100004
+msgid ""
+"In most cases, `ray_method='fibonacci'` provides more uniform angular "
+"sampling than other methods."
+msgstr "在大多数情况下，`ray_method='fibonacci'` 提供比其他方法更均匀的角向采样。"
+
+#: ../../source/tutorials/step_by_step.ipynb:100006
+#, python-brace-format
+msgid ""
+"See {ref}`Uniform Sampling on the Sphere <spherical-sampling>` for a more"
+" detailed discussion of the Fibonacci method."
+msgstr "有关 Fibonacci 方法的更详细说明，请参见 {ref}`球面上的均匀采样 <spherical-sampling>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:100009
+#, python-brace-format
+msgid ""
+"`particles` s the initialized particle object, that is, an instance "
+"of{py:class}`Particles <gal3d.point.Particles>`，"
+msgstr "`particles` 为已初始化的粒子对象，即 {py:class}`Particles <gal3d.point.Particles>` 的一个实例，"
+
+#: ../../source/tutorials/step_by_step.ipynb:100010
+msgid ""
+"`num_ray` is the number of density probes. Each probe traces how the "
+"density changes outward from the center along one direction. The default "
+"value is `1024`."
+msgstr "`num_ray` 是密度探针的数量。每个探针会沿一个方向追踪从中心向外的密度变化。默认值为 `1024`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:100011
+msgid ""
+"`ray_method` specifies how the probe directions are sampled. In most "
+"cases, these directions should be distributed uniformly over the sphere. "
+"The default is `fibonacci`."
+msgstr "`ray_method` 指定了探针方向的采样方式。在大多数情况下，这些方向应均匀分布在球面上。默认值为 `fibonacci`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:110002
+msgid "Radial Range of the Density Probes"
+msgstr "密度探针的径向范围"
+
+#: ../../source/tutorials/step_by_step.ipynb:110004
+#, python-brace-format
+msgid ""
+"After choosing the direction of each density probe, we need to define its"
+" radial range. This is done with {py:meth}`build_field_boundary "
+"<gal3d.field.spherical_field.field.SphField.build_field_boundary>`."
+msgstr ""
+"在选择每个密度探针的方向后，我们需要定义其径向范围。该步骤通过 {py:meth}`build_field_boundary <gal3d.field.spherical_field.field.SphField.build_field_boundary>` 完成。"
+
+#: ../../source/tutorials/step_by_step.ipynb:110006
+msgid ""
+"Both the minimum and maximum radii of each probe must be specified. Here,"
+" we set the minimum radius to `0.2` and the maximum radius to the point "
+"where the density falls to `2e4`."
+msgstr ""
+"需要同时指定每个探针的最小半径和最大半径。这里我们将最小半径设为 `0.2`，最大半径设为密度降到 `2e4` 的位置。"
+
+#: ../../source/tutorials/step_by_step.ipynb:130002
+msgid ""
+"After this step, you can inspect `field.inner_r` and `field.outer_r`. "
+"These are one-dimensional arrays that give the inner and outer radius of "
+"each density probe."
+msgstr ""
+"完成此步骤后，你可以检查 `field.inner_r` 和 `field.outer_r`。它们是一维数组，分别给出每个密度探针的内半径和外半径。"
+
+#: ../../source/tutorials/step_by_step.ipynb:150002
+msgid "The figure below shows the distributions of the inner and outer radii."
+msgstr "下图展示了内半径和外半径的分布。"
+
+
+#: ../../source/tutorials/step_by_step.ipynb:170002
+msgid "Sampling the Radial Density Profile"
+msgstr "采样径向密度分布"
+
+#: ../../source/tutorials/step_by_step.ipynb:170004
+#, python-brace-format
+msgid ""
+"Once the probe directions and radial ranges have been defined, each probe"
+" must sample the density along its radial interval in order to recover "
+"the radial density profile. This is done with "
+"{py:meth}`build_profile_sample "
+"<gal3d.field.spherical_field.field.SphField.build_profile_sample>`."
+msgstr ""
+""一旦探针方向和径向范围确定后，每个探针都需要在其径向区间内采样密度，以恢复径向密度剖面。该步骤通过 {py:meth}`build_profile_sample <gal3d.field.spherical_field.field.SphField.build_profile_sample>` 完成。"
+
+#: ../../source/tutorials/step_by_step.ipynb:170006
+msgid ""
+"Here we set `num_p=500` and `step_mode='log'`, which means that 500 "
+"logarithmically spaced sample points are used along each direction to "
+"trace the radial density distribution."
+msgstr ""
+"这里设置 `num_p=500` 和 `step_mode='log'`，即沿每个方向使用 500 个对数间隔采样点来追踪径向密度分布。"
+
+#: ../../source/tutorials/step_by_step.ipynb:190002
+msgid "Interpolating the Radial Density Profile"
+msgstr "插值径向密度分布"
+
+#: ../../source/tutorials/step_by_step.ipynb:190004
+#, python-brace-format
+msgid ""
+"After sampling the radial density profile along each probe direction, the"
+" next step is to construct interpolators from those samples. This is done"
+" with {py:meth}`build_profile_interpolator "
+"<gal3d.field.spherical_field.field.SphField.build_profile_interpolator>`."
+msgstr ""
+"在沿每个探针方向完成径向密度采样后，下一步是基于这些样本构建插值器。该步骤通过 {py:meth}`build_profile_interpolator <gal3d.field.spherical_field.field.SphField.build_profile_interpolator>` 完成。"
+
+#: ../../source/tutorials/step_by_step.ipynb:190006
+msgid ""
+"Here we set `interpolator_method='LU'`, which uses the Lower-Upper (LU) "
+"method for monotonic interpolation. The option `is_decreasing=True` "
+"specifies that the interpolator should be monotonic decreasing."
+msgstr "这里设置 `interpolator_method='LU'`，使用 Lower-Upper（LU）方法进行单调插值。选项 `is_decreasing=True` 指定插值器应为单调递减。"
+
+#: ../../source/tutorials/step_by_step.ipynb:190011
+#, python-brace-format
+msgid ""
+"See {ref}`Monotonic Smooth Interpolation <monotonic-ray>` for details of "
+"this implementation."
+msgstr "有关此实现的细节，请参见 {ref}`单调平滑插值 <monotonic-ray>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:210002
+msgid ""
+"At this point, we have obtained a monotonic decreasing radial density "
+"interpolator for each probe direction."
+msgstr "至此，我们已在每个探针方向上得到一个单调递减的径向密度插值器。"
+
+#: ../../source/tutorials/step_by_step.ipynb:220002
+msgid "Radial Distribution of Iso-Density Surfaces"
+msgstr "等密度面径向分布"
+
+#: ../../source/tutorials/step_by_step.ipynb:220004
+msgid ""
+"The purpose of this step is to estimate the radial distribution of iso-"
+"density surfaces and construct the corresponding interpolator, so that "
+"parameter ranges can be constrained more effectively during model "
+"fitting."
+msgstr "本步骤的目的是估计等密度面的径向分布并构建相应插值器，从而在模型拟合时更有效地约束参数范围。"
+
+#: ../../source/tutorials/step_by_step.ipynb:240002
+msgid ""
+"The figure below shows the estimated radial iso-density profile (black "
+"points), the corresponding interpolation (red line), and the relative "
+"error (green line)."
+msgstr "下图展示了估计得到的径向等密度剖面（黑点）、对应插值结果（红线）以及相对误差（绿线）。"
+
+#: ../../source/tutorials/step_by_step.ipynb:260004
+msgid "Shape Setup"
+msgstr "形状设定"
+
+#: ../../source/tutorials/step_by_step.ipynb:260006
+msgid "The purpose of this step is to define the target shape before fitting."
+msgstr "本步骤的目的是在拟合前定义目标形状。"
+
+#: ../../source/tutorials/step_by_step.ipynb:260008
+#, python-brace-format
+msgid ""
+"This section focuses on shape setup using the {py:class}`Structure3D "
+"<gal3d.shape.Structure3D>` class."
+msgstr "本节重点介绍如何使用 {py:class}`Structure3D <gal3d.shape.Structure3D>` 类进行形状设置。"
+
+#: ../../source/tutorials/step_by_step.ipynb:270002
+msgid "Initializing the Shape"
+msgstr "初始化形状"
+
+#: ../../source/tutorials/step_by_step.ipynb:270004
+#, python-brace-format
+msgid ""
+"To initialize {py:class}`Structure3D <gal3d.shape.Structure3D>`, you need"
+" to specify a shape function, a coordinate system, an error function, and"
+" an error-evaluation method."
+msgstr "要初始化 {py:class}`Structure3D <gal3d.shape.Structure3D>`，需要指定形状函数、坐标系、误差函数以及一个误差评估方法。"
+
+#: ../../source/tutorials/step_by_step.ipynb:270006
+msgid ""
+"You can inspect all available options with "
+"`Structure3D.available_options()`."
+msgstr "可通过 `Structure3D.available_options()` 查看所有可用选项。"
+
+#: ../../source/tutorials/step_by_step.ipynb:300002
+msgid ""
+"Here we use `EulerShift`, which represents 3D coordinate transformations "
+"using Euler angles and translations."
+msgstr "这里我们使用 `EulerShift`，它表示使用欧拉角和平移的三维坐标变换。"
+
+#: ../../source/tutorials/step_by_step.ipynb:300004
+msgid ""
+"We also use `Ellipsoid_S`, an ellipsoidal shape function with shape "
+"indices; `sums_dev_rscale`, a distance-squared-weighted error function; "
+"and `isodensity_curve_dcall`, which evaluates distances to iso-density "
+"surfaces."
+msgstr ""
+"我们还使用 `Ellipsoid_S`（带形状指数的椭球函数）、`sums_dev_rscale`（距离平方加权的误差函数）以及 `isodensity_curve_dcall`（用于评估到等密度面的距离）。"
+
+#: ../../source/tutorials/step_by_step.ipynb:300006
+msgid ""
+"In the printed representation of `structure`, you can see `EulerShift` "
+"and `Ellipsoid_S`, followed by their corresponding parameters and values."
+msgstr "在 `structure` 的打印表示中，你可以看到 `EulerShift` 和 `Ellipsoid_S`，以及它们对应的参数和值。"
+
+#: ../../source/tutorials/step_by_step.ipynb:310002
+#, python-brace-format
+msgid ""
+"\n"
+"\\large\n"
+"\\begin{array}{r c l}\n"
+"& \\mathbf{Coordinate} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{EulerShift} \\\\\n"
+"\\text{Func} & : & \\ \\mathbf{X}'=\\mathbf{X}\\,R_{zyx}^{\\mathsf "
+"T}(\\alpha,\\beta,\\gamma)-\\mathbf{1}_n\\,\\mathbf{c} \\\\\n"
+"\\text{Param (6)} & : & x_c=0.00,\\ y_c=0.00,\\ z_c=0.00,\\ "
+"\\alpha=0.00,\\ \\beta=0.00,\\ \\gamma=0.00 \\\\\n"
+"\\text{Derived\\ param} & : & \\ "
+"\\mathbf{c}=\\begin{bmatrix}x_c&y_c&z_c\\end{bmatrix},\\ \\ "
+"R_{zyx}(\\alpha,\\beta,\\gamma)=R_{z}(\\alpha)\\,R_{y}(\\beta)\\,R_{x}(\\gamma)"
+" \\\\\n"
+"& \\mathbf{Geometry} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{SuperEllipsoid} \\\\\n"
+"\\text{Func} & : & ([(\\frac{x}{a})^2]^{S_a} + [(\\frac{y}{b})^2]^{S_b} +"
+" [(\\frac{z}{c})^2]^{S_c}) \\\\\n"
+"\\text{Param (6)} & : & a=3.00,\\ \\epsilon_{ab}=0.20,\\ "
+"\\epsilon_{bc}=0.50,\\ S_a=1.00,\\ S_b=1.00,\\ S_c=1.00 \\\\\n"
+"\\text{Derived\\ param} & : & b = a(1 - \\epsilon_{ab})=2.40,\\ c = b(1 -"
+" \\epsilon_{bc})=1.20 \\\\\n"
+"& \\mathbf{Error} & \\\\\n"
+"\\mathrm{Err func}   & : & \\mathrm{sums\\_dev\\_rscale} \\\\\n"
+"\\mathrm{Err method} & : & \\mathrm{isodensity\\_curve\\_dcall} \\\\\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:320004
+#, python-brace-format
+msgid ""
+"See {ref}`Superellipsoids with Different Shape Parameters <ellipsoid-"
+"shape-show>` for visual examples of ellipsoids with different parameter "
+"combinations."
+msgstr "关于不同参数组合下超椭球的可视化示例，请参见 {ref}`不同形状参数的超椭球 <ellipsoid-shape-show>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:320006
+msgid ""
+"The left panel below shows the `z=0` slice for the standard ellipsoid "
+"case with shape indices `sa=1` and `sb=1`. Different colors correspond to"
+" different values of `eps_ab`, illustrating how the ellipticity changes."
+msgstr "下图左侧面板显示了标准椭球情况下 `z=0` 的切片，形状指数为 `sa=1` 和 `sb=1`。不同颜色对应不同的 `eps_ab` 值，展示了椭球的椭率变化。"
+
+#: ../../source/tutorials/step_by_step.ipynb:320008
+msgid ""
+"The right panel shows how the shape indices affect the geometry. With "
+"`eps_ab = 0.2`, different values of the shape indices produce different "
+"shapes. When `sa=sb=1`, the result is a standard ellipsoid, and the slice"
+" is a standard ellipse (black solid line). When `sa=sb=0.5`, the slice "
+"becomes diamond-like (black dotted line). When `sa=sb=2`, the slice "
+"becomes boxier and more rectangular (black dashed line)."
+msgstr "右侧面板显示了形状指数如何影响几何形状。当 `eps_ab = 0.2` 时，不同的形状指数值会产生不同的形状。"
+"当 `sa=sb=1` 时，结果是标准椭球，切片是标准椭圆（黑色实线）。当 `sa=sb=0.5` 时，切片变为菱形（黑色虚线）。当 `sa=sb=2` 时，切片变得更方形和矩形（黑色虚线）。"
+
+#: ../../source/tutorials/step_by_step.ipynb:340002
+msgid "Shape Parameters"
+msgstr "形状参数"
+
+#: ../../source/tutorials/step_by_step.ipynb:340004
+#, python-brace-format
+msgid ""
+"`structure.parameters` is an instance of {py:class}`Parameters "
+"<gal3d.optimization.parameter.Parameters>`, which stores all adjustable "
+"parameters and their constraints."
+msgstr ""
+"`structure.parameters` 是 {py:class}`Parameters <gal3d.optimization.parameter.Parameters>` 的一个实例，存储了所有可调参数及其约束。"
+
+#: ../../source/tutorials/step_by_step.ipynb:340008
+#, python-brace-format
+msgid ""
+"`parameters` supports lower and upper bounds as well as additional "
+"constraints. You can set lower and upper bounds with "
+"{py:meth}`Parameters.set_lb "
+"<gal3d.optimization.parameter.Parameters.set_lb>` and "
+"{py:meth}`Parameters.set_ub "
+"<gal3d.optimization.parameter.Parameters.set_ub>`. You can also add "
+"equality constraints with {py:meth}`Parameters.add_equal_constraints "
+"<gal3d.optimization.parameter.Parameters.add_equal_constraints>`. See "
+"{ref}`Working with Parameter Classes <parameters>` for more detailed "
+"examples."
+msgstr "`parameters` 支持下界和上界以及其他约束。"
+"可以通过 {py:meth}`Parameters.set_lb <gal3d.optimization.parameter.Parameters.set_lb>` 和 {py:meth}`Parameters.set_ub <gal3d.optimization.parameter.Parameters.set_ub>` "
+"设置上下界。"
+"也可以使用 {py:meth}`Parameters.add_equal_constraints <gal3d.optimization.parameter.Parameters.add_equal_constraints>` 添加等式约束。有关更详细的示例，请参见 {ref}`使用参数类 <parameters>`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:350002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{x} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{y} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{z} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{ang1} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{ang2} & : & 0.000 \\in [-1.571, 1.571] \\\\\n"
+"\\mathrm{ang3} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.100, \\infty] \\\\\n"
+"\\mathrm{eps\\_ab} & : & 0.200 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{eps\\_bc} & : & 0.500 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{sa} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sb} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sc} & : & 1.000 \\in [0.200, 2.000]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:360002
+msgid ""
+"You can access the lower and upper bounds of all parameters through the "
+"`parameters.lb` and `parameters.ub` attributes, both of which return "
+"dictionaries."
+msgstr ""
+"你可以通过 `parameters.lb` 和 `parameters.ub` 属性访问所有参数的下界和上界，这两个属性都返回字典。"
+
+#: ../../source/tutorials/step_by_step.ipynb:390002
+msgid ""
+"You can also inspect the lower and upper bounds of a specific parameter, "
+"for example with `parameters['eps_bc'].lb` and `parameters['eps_bc'].ub`."
+msgstr ""
+""你也可以检查特定参数的下界和上界，例如通过 `parameters['eps_bc'].lb` 和 `parameters['eps_bc'].ub`。"
+
+#: ../../source/tutorials/step_by_step.ipynb:410004
+msgid "Optimizer Setup"
+msgstr "优化器设置"
+
+#: ../../source/tutorials/step_by_step.ipynb:410006
+#, python-brace-format
+msgid ""
+"The purpose of this step is to choose and configure an optimizer for "
+"model fitting. Here we use the {py:class}`Optimizer "
+"<gal3d.optimization.optimizer.Optimizer>` class."
+msgstr "本步骤目的是为模型拟合选择并配置优化器。这里使用 {py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>` 类。"
+
+#: ../../source/tutorials/step_by_step.ipynb:410008
+#, python-brace-format
+msgid ""
+"You can list the available optimizer plugins with "
+"{py:meth}`Optimizer.available_plugins "
+"<gal3d.optimization.optimizer.Optimizer.available_plugins>`."
+msgstr "可通过 {py:meth}`Optimizer.available_plugins <gal3d.optimization.optimizer.Optimizer.available_plugins>` 列出可用优化器插件。"
+
+#: ../../source/tutorials/step_by_step.ipynb:430002
+#, python-brace-format
+msgid ""
+"You can then retrieve a specific optimizer plugin with "
+"{py:meth}`Optimizer.get_plugin "
+"<gal3d.optimization.optimizer.Optimizer.get_plugin>`. This returns a "
+"class derived from {py:class}`OptimizerBase "
+"<gal3d.optimization.optimizer.OptimizerBase>`."
+msgstr "随后可通过 {py:meth}`Optimizer.get_plugin <gal3d.optimization.optimizer.Optimizer.get_plugin>` 获取某个具体优化器插件。"
+"该接口返回一个继承自 {py:class}`OptimizerBase <gal3d.optimization.optimizer.OptimizerBase>` 的类。"
+
+#: ../../source/tutorials/step_by_step.ipynb:450002
+#, python-brace-format
+msgid ""
+"You can then inspect the optimization algorithms provided by this plugin "
+"with {py:meth}`OptimizerBase.available_algorithm "
+"<gal3d.optimization.optimizer.OptimizerBase.available_algorithm>` ."
+msgstr "你可以通过 {py:meth}`OptimizerBase.available_algorithm <gal3d.optimization.optimizer.OptimizerBase.available_algorithm>` 查看该插件提供的优化算法。"
+
+#: ../../source/tutorials/step_by_step.ipynb:470002
+msgid ""
+"Next, choose one of the available algorithms, for example `\"trf\"`, and "
+"use it to create an optimizer instance."
+msgstr "接下来，从可用算法中选择一个（例如 `\"trf\"`），并用它创建优化器实例。"
+
+#: ../../source/tutorials/step_by_step.ipynb:490003
+#, python-brace-format
+msgid ""
+"Additional optimizer settings can be configured with "
+"{py:meth}`OptimizerBase.set_options "
+"<gal3d.optimization.optimizer.OptimizerBase.set_options>`."
+msgstr "可以通过 {py:meth}`OptimizerBase.set_options <gal3d.optimization.optimizer.OptimizerBase.set_options>` 配置额外的优化器设置。"
+
+#: ../../source/tutorials/step_by_step.ipynb:500002
+msgid "Running the Fit"
+msgstr "执行拟合"
+
+#: ../../source/tutorials/step_by_step.ipynb:500004
+#, python-brace-format
+msgid ""
+"After initializing {py:class}`Particles <gal3d.point.Particles>`, "
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`, "
+"{py:class}`Structure3D <gal3d.shape.Structure3D>`, and "
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>`, pass them"
+" to {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` to start the"
+" fitting process."
+msgstr "在初始化 {py:class}`Particles <gal3d.point.Particles>`、"
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`、"
+"{py:class}`Structure3D <gal3d.shape.Structure3D>` 和 "
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>` 之后，"
+"将它们传递给 {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` 来开始拟合过程。"
+
+#: ../../source/tutorials/step_by_step.ipynb:530002
+#, python-brace-format
+msgid ""
+"You can then run the fit with {py:meth}`Gal3DAnalyzer.fit "
+"<gal3d.analyzer.Gal3DAnalyzer.fit>`."
+msgstr "随后可以通过 {py:meth}`Gal3DAnalyzer.fit <gal3d.analyzer.Gal3DAnalyzer.fit>` 执行拟合。"
+

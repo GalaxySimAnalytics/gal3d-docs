@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/reference/index.rst:6
+msgid "Gal3D Reference"
+msgstr ""
+
+#: ../../source/reference/index.rst:8
+msgid ""
+"The Gal3D reference documentation is generated automatically from the "
+"source code. It is organized by subpackage as follows."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.point <gal3d.point>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ""
+"Module for computing centers, inertia tensors, principal axes, and "
+"density estimations using density estimators."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.field <gal3d.field>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module for defining and manipulating density fields."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.shape <gal3d.shape>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module for defining and manipulating 3D shapes."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.optimization <gal3d.optimization>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ""
+"Module for applying optimization, including various optimization "
+"algorithms, parameter definitions, result handling, and more."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.model_workflow <gal3d.model_workflow>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Model workflows for fitting and error estimation."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.characterization <gal3d.characterization>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module for characterizing model results."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.visualization <gal3d.visualization>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module for visualizing model results."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.theoretical <gal3d.theoretical>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Theoretical density distributions."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.analyzer <gal3d.analyzer>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "High-level interface for analyzing and fitting 3D galaxy structures."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.density <gal3d.density>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.plugin <gal3d.plugin>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Plugin management system for gal3d"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.configuration <gal3d.configuration>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module: gal3d.configuration"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.log <gal3d.log>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Logging configuration and utilities for the gal3d package."
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid ":py:obj:`gal3d.util <gal3d.util>`"
+msgstr ""
+
+#: ../../source/reference/index.rst:28:<autosummary>:1
+msgid "Module for utility functions."
+msgstr ""
+

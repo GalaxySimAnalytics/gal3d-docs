@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-26 13:24+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/quick_start.ipynb:10002
+msgid "Quick Start"
+msgstr "快速入门"
+
+#: ../../source/tutorials/quick_start.ipynb:10005
+msgid ""
+"This tutorial walks through the basic workflow for building a 3D galaxy "
+"morphology model with Gal3D."
+msgstr "本教程将带你了解使用 Gal3D 构建三维星系形态模型的基本流程。"
+
+#: ../../source/tutorials/quick_start.ipynb:10007
+msgid ""
+"This page is generated from a Jupyter notebook, which you can download "
+"using the link in the upper-right corner."
+msgstr "本页面由 Jupyter notebook 生成，你可以通过右上角的链接下载该 notebook。"
+
+#: ../../source/tutorials/quick_start.ipynb:20002
+msgid "Extracting the Data"
+msgstr "提取数据"
+
+#: ../../source/tutorials/quick_start.ipynb:20005
+msgid ""
+"We use the [AnastrisTNG](https://github.com/wx-ys/AnastrisTNG) library to"
+" extract the positions (`pos`) and masses (`mass`) of stellar particles "
+"for a galaxy in the TNG50-1 simulation."
+msgstr ""
+"我们使用 [AnastrisTNG](https://github.com/wx-ys/AnastrisTNG) 库，从 TNG50-1 模拟中的某个星系提取恒星粒子的"
+"位置（`pos`）与质量（`mass`）。"
+
+
+#: ../../source/tutorials/quick_start.ipynb:20007
+msgid "These data are used in the 3D modeling example below."
+msgstr "这些数据将用于下方的三维建模示例。"
+
+#: ../../source/tutorials/quick_start.ipynb:40003
+msgid ""
+"To demonstrate the Gal3D workflow, we use a galaxy extracted from "
+"TNG50-1. To apply the same workflow to other data sets, simply replace "
+"the particle positions (`pos`) and masses (`mass`). Here, `pos` should "
+"have shape `(N, 3)`, and `mass` should have shape `(N,)`."
+msgstr ""
+"为演示 Gal3D 的工作流程，我们使用从 TNG50-1 提取的一组星系数据。若要将同样流程应用到其他数据集，只需替换粒子位置（`pos`）"
+"和质量（`mass`）。其中 `pos` 的形状应为 `(N, 3)`，`mass` 的形状应为 `(N,)`。"
+
+#: ../../source/tutorials/quick_start.ipynb:50002
+msgid "Data Initialization"
+msgstr "数据初始化"
+
+#: ../../source/tutorials/quick_start.ipynb:50007
+#, python-brace-format
+msgid ""
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>` "
+"automates several steps, including {ref}`particle initialization "
+"<particle-initialization>`, {ref}`density-field construction <density-"
+"field>`, {ref}`shape setup <shape-setting>`, and {ref}`optimizer "
+"configuration <optimization>`. If you want finer control over each step, "
+"see {ref}`Step-by-Step Workflow <step_by_step>`."
+msgstr ""
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>` "
+"会自动完成多个步骤，包括 {ref}`粒子初始化 <particle-initialization>`、"
+"{ref}`密度场构建 <density-field>`、{ref}`形状设定 <shape-setting>` 以及 "
+"{ref}`优化器配置 <optimization>`。如果你希望对每一步进行更细粒度控制，请参见 "
+"{ref}`分步工作流程 <step_by_step>`。"
+
+#: ../../source/tutorials/quick_start.ipynb:50009
+#, python-brace-format
+msgid ""
+"Pass the particle positions (``pos``) and masses (``mass``) to the "
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>` "
+"to initialize the 3D data."
+msgstr ""
+"将粒子位置（``pos``）和质量（``mass``）传入 "
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>`，"
+"即可完成三维数据初始化。"
+
+#: ../../source/tutorials/quick_start.ipynb:50011
+msgid ""
+"``recenter`` controls whether the particles are recentered before "
+"analysis."
+msgstr "``recenter`` 用于控制在分析前是否对粒子进行平移（重新中心化）。"
+
+#: ../../source/tutorials/quick_start.ipynb:50012
+#, python-format
+msgid ""
+"``inner_frac`` sets the inner boundary at the radius where the density "
+"falls to 90% of the central density."
+msgstr "``inner_frac`` 将内边界设定在密度下降到中心密度 90% 对应的半径处。"
+
+#: ../../source/tutorials/quick_start.ipynb:50013
+msgid "``outer`` and ``outer_mode`` control how the outer boundary is defined."
+msgstr "``outer`` 和 ``outer_mode`` 用于控制外边界的定义方式。"
+
+#: ../../source/tutorials/quick_start.ipynb:70002
+msgid "Fitting the Model"
+msgstr "拟合模型"
+
+#: ../../source/tutorials/quick_start.ipynb:70005
+msgid ""
+"After initialization, the next step is to fit a model to the 3D galaxy "
+"structure."
+msgstr "完成初始化后，下一步是对三维星系结构进行模型拟合。"
+
+#: ../../source/tutorials/quick_start.ipynb:70007
+#, python-brace-format
+msgid ""
+"We use {py:meth}`Gal3DAnalyzer.fit <gal3d.analyzer.Gal3DAnalyzer.fit>` to"
+" fit a set of nested ellipsoids to the particle distribution. Setting "
+"`num_step=300` generates 300 nested ellipsoids. The default value is "
+"`200`."
+msgstr ""
+"我们使用 {py:meth}`Gal3DAnalyzer.fit <gal3d.analyzer.Gal3DAnalyzer.fit>` "
+"对粒子分布拟合一组嵌套椭球体。设置 `num_step=300` 会生成 300 个嵌套椭球，默认值为 `200`。"
+
+#: ../../source/tutorials/quick_start.ipynb:90002
+msgid ""
+"You may see a `PoorUniformityError` warning. This means that the sampling"
+" points are not sufficiently uniform at certain radii, which may reduce "
+"the accuracy of the fit. Those radii are therefore skipped."
+msgstr ""
+"你可能会看到 `PoorUniformityError` 警告。这表示在某些半径处采样点分布不够均匀，可能降低拟合精度，"
+"因此这些半径会被跳过。"
+
+#: ../../source/tutorials/quick_start.ipynb:100002
+msgid "Fitting Results"
+msgstr "拟合结果"
+
+#: ../../source/tutorials/quick_start.ipynb:100007
+#, python-brace-format
+msgid ""
+"For more information about the {py:class}`ModelResult "
+"<gal3d.optimization.result.ModelResult>` class, see the {ref}`Fitting and"
+" Optimization <optimization>` documentation."
+msgstr ""
+"关于 {py:class}`ModelResult <gal3d.optimization.result.ModelResult>` 类的更多信息，"
+"请参见 {ref}`拟合与优化 <optimization>` 文档。"
+
+#: ../../source/tutorials/quick_start.ipynb:100009
+#, python-brace-format
+msgid ""
+"After fitting, ``res_ellipsoid_s`` contains the parameter values for all "
+"nested ellipsoids. It is a {py:class}`ModelResult "
+"<gal3d.optimization.result.ModelResult>` object that stores the fitted "
+"model, model parameters, goodness-of-fit diagnostics, and related "
+"quantities."
+msgstr ""
+"拟合完成后，``res_ellipsoid_s`` 包含所有嵌套椭球体的参数值。"
+"它是一个 {py:class}`ModelResult <gal3d.optimization.result.ModelResult>` 对象，"
+"用于保存拟合模型、模型参数、拟合优度诊断及相关量。"
+
+#: ../../source/tutorials/quick_start.ipynb:100013
+msgid "Use ``res_ellipsoid_s.keys()`` to inspect the main parameter keys."
+msgstr "可使用 ``res_ellipsoid_s.keys()`` 查看主要参数键。"
+
+#: ../../source/tutorials/quick_start.ipynb:120003
+msgid ""
+"Use `res_ellipsoid_s.available_keys()` to view all available keys, "
+"including both parameter keys and other related quantities."
+msgstr ""
+"可使用 `res_ellipsoid_s.available_keys()` 查看全部可用键，"
+"包括参数键及其他相关量。"
+
+#: ../../source/tutorials/quick_start.ipynb:140002
+msgid "You can also display `res_ellipsoid_s` directly as a table."
+msgstr "你也可以将 `res_ellipsoid_s` 直接以表格形式显示。"
+
+#: ../../source/tutorials/quick_start.ipynb:160002
+msgid ""
+"You can access the nth ellipsoid with `res_ellipsoid_s[n]` and inspect "
+"its detailed properties."
+msgstr ""
+"你可以通过 `res_ellipsoid_s[n]` 访问第 n 个椭球，并查看其详细属性。"
+
+#: ../../source/tutorials/quick_start.ipynb:170002
+#, python-brace-format
+msgid ""
+"\n"
+"\\large\n"
+"\\begin{array}{r c l}\n"
+"& \\mathbf{Coordinate} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{ShiftEuler} \\\\\n"
+"\\text{Func} & : & "
+"\\mathbf{X}'=(\\mathbf{X}-\\mathbf{1}_n\\,\\mathbf{c})\\,R_{zyx}^{\\mathsf"
+" T}(\\alpha,\\beta,\\gamma) \\\\\n"
+"\\text{Param (6)} & : & x_c=-0.03,\\ y_c=0.04,\\ z_c=0.01,\\ "
+"\\alpha=-1.11,\\ \\beta=-0.02,\\ \\gamma=-0.01 \\\\\n"
+"\\text{Derived\\ param} & : & \\ "
+"\\mathbf{c}=\\begin{bmatrix}x_c&y_c&z_c\\end{bmatrix},\\ \\ "
+"R_{zyx}(\\alpha,\\beta,\\gamma)=R_{z}(\\alpha)\\,R_{y}(\\beta)\\,R_{x}(\\gamma)"
+" \\\\\n"
+"& \\mathbf{Geometry} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{SuperEllipsoid} \\\\\n"
+"\\text{Func} & : & ([(\\frac{x}{a})^2]^{S_a} + [(\\frac{y}{b})^2]^{S_b} +"
+" [(\\frac{z}{c})^2]^{S_c}) \\\\\n"
+"\\text{Param (6)} & : & a=0.42,\\ \\epsilon_{ab}=0.40,\\ "
+"\\epsilon_{bc}=0.57,\\ S_a=1.83,\\ S_b=1.74,\\ S_c=0.33 \\\\\n"
+"\\text{Derived\\ param} & : & b = a(1 - \\epsilon_{ab})=0.25,\\ c = b(1 -"
+" \\epsilon_{bc})=0.11 \\\\\n"
+"& \\mathbf{Error} & \\\\\n"
+"\\mathrm{Err func}   & : & \\mathrm{sums\\_dev\\_rscale} \\\\\n"
+"\\mathrm{Err method} & : & \\mathrm{isodensity\\_curve\\_dcall} \\\\\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:180002
+msgid "You can also examine how the shape parameters vary with radius."
+msgstr "你还可以查看形状参数随半径变化的趋势。"
+
+#: ../../source/tutorials/quick_start.ipynb:210002
+msgid "Result Analysis"
+msgstr "结果分析"
+
+#: ../../source/tutorials/quick_start.ipynb:210005
+#, python-brace-format
+msgid ""
+"After obtaining the fitting results, you can analyze them using the "
+"{py:class}`Characterizer "
+"<gal3d.characterization.characterizer.Characterizer>` class."
+msgstr ""
+"得到拟合结果后，你可以使用 {py:class}`Characterizer "
+"<gal3d.characterization.characterizer.Characterizer>` 类进行结果分析。"
+
+#: ../../source/tutorials/quick_start.ipynb:210007
+#, python-brace-format
+msgid ""
+"Use {py:obj}`Characterizer.available_plugins "
+"<gal3d.characterization.characterizer.Characterizer.available_plugins>` "
+"to list all available characterization plugins. For example, the "
+"{py:class}`Bar "
+"<gal3d.characterization.characterizer_plugins.galaxy_bar.Bar>` plugin can"
+" be used to measure the morphological properties of galactic bars."
+msgstr ""
+"使用 {py:obj}`Characterizer.available_plugins "
+"<gal3d.characterization.characterizer.Characterizer.available_plugins>` "
+"可列出所有可用的形态学分析插件。"
+"例如，{py:class}`Bar <gal3d.characterization.characterizer_plugins.galaxy_bar.Bar>` "
+"插件可用于测量星系棒结构的形态学性质。"
+
+#: ../../source/tutorials/quick_start.ipynb:230002
+msgid ""
+"Use `Characterizer.get_plugin('Bar')` to obtain the Bar plugin and apply "
+"it to the fitted result:"
+msgstr ""
+"使用 `Characterizer.get_plugin('Bar')` 获取 Bar 插件，并将其应用于拟合结果："
+
+#: ../../source/tutorials/quick_start.ipynb:250002
+msgid ""
+"`flag=1` indicates that a bar is detected. `R_bar` gives the semi-major-"
+"axis length of the bar."
+msgstr ""
+"`flag=1` 表示检测到棒结构。`R_bar` 给出棒结构的半长轴长度。"
+
+#: ../../source/tutorials/quick_start.ipynb:260002
+msgid "Visualization"
+msgstr "可视化"
+
+#: ../../source/tutorials/quick_start.ipynb:260005
+msgid ""
+"Gal3D also provides visualization tools for direct comparison between the"
+" model and the data."
+msgstr "Gal3D 还提供可视化工具，用于直接比较模型与数据。"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:260007
+#, python-brace-format
+msgid ""
+"The {py:class}`ModelProjector "
+"<gal3d.visualization.model_projector.ModelProjector>` plugin projects the"
+" 3D model onto a 2D plane, and {py:class}`ProjectorLineIntegration "
+"<gal3d.visualization.model_projector_plugins.projector_line_integration.ProjectorLineIntegration>`"
+" supports line-of-sight integrated projections."
+msgstr ""
+"{py:class}`ModelProjector <gal3d.visualization.model_projector.ModelProjector>` "
+"插件可将三维模型投影到二维平面，"
+"{py:class}`ProjectorLineIntegration "
+"<gal3d.visualization.model_projector_plugins.projector_line_integration.ProjectorLineIntegration>` "
+"支持沿视线积分的投影方式。"
+
+#: ../../source/tutorials/quick_start.ipynb:260009
+#, python-brace-format
+msgid ""
+"The helper function {py:func}`show_image_model_residual "
+"<gal3d.visualization.data_model_residual.show_image_model_residual>` "
+"displays the projected data, the projected model, and their residuals "
+"side by side for easy comparison."
+msgstr ""
+"辅助函数 {py:func}`show_image_model_residual "
+"<gal3d.visualization.data_model_residual.show_image_model_residual>` "
+"会并排显示投影后的数据、投影后的模型及其残差，便于直观比较。"
+
+#: ../../source/tutorials/quick_start.ipynb:270005
+msgid ""
+"To speed up the computation, you can increase the number of threads. Set "
+"this according to the number of CPU cores available on your machine; for "
+"example:"
+msgstr ""
+"为加速计算，你可以增加线程数。可根据机器可用的 CPU 核心数进行设置，例如："
+

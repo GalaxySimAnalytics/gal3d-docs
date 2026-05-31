@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/index.rst:15
+msgid "Quick Start"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:15
+msgid "Step-by-Step Workflow"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:15
+msgid "Deeper Dives"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:4
+msgid "Gal3D Tutorials"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:6
+msgid ""
+"This section provides practical tutorials to help you get started with "
+"Gal3D and become familiar with its main features and workflows."
+msgstr ""
+
+#: ../../source/tutorials/index.rst:9
+msgid ""
+":doc:`Quick Start <quick_start>` introduces the most basic usage patterns"
+" and examples."
+msgstr ""
+
+#: ../../source/tutorials/index.rst:11
+msgid ""
+":doc:`Step-by-Step Workflow <step_by_step>` walks through a complete "
+"model-fitting workflow in detail."
+msgstr ""
+
+#: ../../source/tutorials/index.rst:13
+msgid ""
+":doc:`Deeper Dives <deeper_dives>` collects more focused examples and "
+"discussions on specific topics."
+msgstr ""
+

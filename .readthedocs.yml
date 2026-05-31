@@ -6,7 +6,9 @@ build:
     python: "3.11"
   jobs:
     post_install:
-      - bash docs/source/gen_api.sh
+      - make api
+    pre_build:
+      - make -C docs compile-translations
 
 python:
   install:

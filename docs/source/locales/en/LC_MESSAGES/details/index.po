@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/index.rst:14
+msgid "Density Estimation"
+msgstr ""
+
+#: ../../source/details/index.rst:14
+msgid "Uniform Sampling on the Sphere"
+msgstr ""
+
+#: ../../source/details/index.rst:14
+msgid "Monotonic Smooth Interpolation"
+msgstr ""
+
+#: ../../source/details/index.rst:14
+msgid "Superellipsoid Functions"
+msgstr ""
+
+#: ../../source/details/index.rst:4
+msgid "Implementation Details"
+msgstr ""
+
+#: ../../source/details/index.rst:6
+msgid ""
+"This section introduces the algorithms and implementation principles "
+"behind the core steps of ``Gal3D``."
+msgstr ""
+
+#: ../../source/details/index.rst:8
+msgid ""
+":doc:`Density Estimation <density_estimation>` describes the density "
+"estimation methods."
+msgstr ""
+
+#: ../../source/details/index.rst:9
+msgid ""
+":doc:`Uniform Sampling on the Sphere <spherical_sampling>` explains how "
+"uniform spherical sampling is implemented."
+msgstr ""
+
+#: ../../source/details/index.rst:10
+msgid ""
+":doc:`Monotonic Smooth Interpolation <monotonic_ray>` presents the "
+"implementation of globally monotonic interpolation."
+msgstr ""
+
+#: ../../source/details/index.rst:11
+msgid ""
+":doc:`Superellipsoid Functions <generalized_ellipsoid>` shows the "
+"mathematical description and applications of the superellipsoid model."
+msgstr ""
+

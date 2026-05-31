@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/density_estimation.ipynb:10004
+msgid "Density Estimation"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10006
+msgid ""
+"Given the three-dimensional coordinates of a set of particles and their "
+"corresponding masses, how can we estimate the mass density at an "
+"arbitrary position?"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10008
+msgid ""
+"Common approaches include tessellation-based methods, such as Voronoi and"
+" Delaunay tessellations, as well as Smoothed Particle Hydrodynamics "
+"(SPH). These methods differ in how particle mass is distributed in shape "
+"and extent."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10010
+msgid ""
+"Among them, SPH provides a good balance between computational efficiency "
+"and accuracy, so `Gal3D` adopts the SPH approach, which can also be "
+"viewed as an adaptive kernel density estimation (adaptive KDE) method. "
+"SPH distributes the mass of point particles into a continuous mass-"
+"density field through a kernel function."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10012
+msgid "SPH Density Estimation"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10014
+#, python-brace-format
+msgid ""
+"By default, `Gal3D` uses the cubic spline kernel, $W(\\mathbf{r}, h) = "
+"w\\left(\\dfrac{r}{h}\\right)$, whose explicit form is"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10016
+#, python-brace-format
+msgid ""
+"\n"
+"    w(u) = \\frac{8}{\\pi} \\begin{cases}\n"
+"        1 - 6 u^{2} + 6 u^{3}, & 0 \\le u \\le \\tfrac{1}{2},\\\\[6pt]\n"
+"        2 (1 - u)^{3}, & \\tfrac{1}{2} < u \\le 1,\\\\[6pt]\n"
+"        0, & \\text{otherwise.}\n"
+"    \\end{cases}\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10024
+#: ../../source/details/density_estimation.ipynb:20021
+msgid "and it satisfies the normalization condition"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10026
+#, python-brace-format
+msgid ""
+"\n"
+"    4 \\pi \\int_{0}^{\\infty} w(u) u^{2} \\mathrm{d}u = 1.\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10030
+msgid ""
+"Here, $h$ is a key parameter in SPH that determines the spatial extent of"
+" a particle's influence. If $h$ is too large, the density field becomes "
+"overly smooth and fails to capture fine structures between particles. If "
+"$h$ is too small, the density field may become noisy. Therefore, choosing"
+" an appropriate value of $h$ is essential for good SPH performance."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10032
+msgid ""
+"In `Gal3D`, the value of $h$ for each particle is defined as the distance"
+" to its $k$-th nearest neighbor. This allows $h$ to adapt automatically "
+"to the local density environment, improving the stability of the density "
+"estimate."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10034
+msgid ""
+"To perform nearest-neighbor searches, `Gal3D` uses "
+"[scipy.spatial.KDTree](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.KDTree.html#scipy.spatial.KDTree)."
+" By default, `Gal3D` sets `k=32` to define the particle neighborhood and "
+"determine $h$."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10036
+msgid ""
+"For the density $\\rho_i$ at an arbitrary position, the estimate is "
+"computed from the $k$ nearest particles as"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10038
+#, python-brace-format
+msgid ""
+"\n"
+"    \\rho_i = \\sum_{j=1}^{k} m_j W(\\mathbf{r}_i - \\mathbf{r}_j, h_i)\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20004
+msgid "SPH Projection"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20006
+#, python-brace-format
+msgid ""
+"In `Gal3D`, SPH projection uses the projected form of the cubic spline "
+"kernel, $\\Sigma\\left(\\dfrac{R}{h}\\right)$, given by"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20008
+msgid ""
+"\n"
+"    \\Sigma(q) = \\dfrac{2}{\\pi}\n"
+"    \\begin{cases}\n"
+"        (4 + 26q^2)\\sqrt{1-q^2} - (1 + 26q^2)\\sqrt{1-4q^2} \\\\\n"
+"        \\qquad - 18q^4 \\ln\\left(\\dfrac{2q}{1+\\sqrt{1-4q^2}}\\right)\n"
+"        - "
+"6q^2(4+q^2)\\ln\\left(\\dfrac{2+2\\sqrt{1-q^2}}{1+\\sqrt{1-4q^2}}\\right)"
+"\n"
+"        & 0 \\leq q \\leq \\tfrac{1}{2}, \\\\[12pt]\n"
+"        2(2 + 13q^2)\\sqrt{1-q^2} + "
+"6q^2(4+q^2)\\ln\\left(\\dfrac{q}{1+\\sqrt{1-q^2}}\\right)\n"
+"        & \\tfrac{1}{2} < q \\leq 1, \\\\[12pt]\n"
+"        0 & \\text{otherwise.}\n"
+"    \\end{cases}\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20023
+#, python-brace-format
+msgid ""
+"\n"
+"    2 \\pi \\int_{0}^{\\infty} \\Sigma(q) q \\mathrm{d}q = 1.\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20027
+msgid ""
+"For a given two-dimensional grid, particle mass is distributed onto the "
+"grid using the projected kernel. When the particle size is $\\lesssim$ "
+"the grid size, `Gal3D` uses [particle "
+"subsampling](https://arxiv.org/abs/2106.05281) to reduce numerical "
+"errors. In addition, to preserve mass conservation in the projection, the"
+" contribution from each particle is renormalized."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20029
+msgid ""
+"The figure below shows an example of how the mass of a single particle, "
+"indicated by the red point and its corresponding red circle, is "
+"distributed on a grid, and how the subsampling method improves the "
+"accuracy."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:40002
+msgid "Example"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:40004
+msgid ""
+"Below is a simple example in which 10,000 particles are generated with "
+"random three-dimensional coordinates and random masses, and the total "
+"mass is normalized to $10^8$:"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:60002
+msgid ""
+"Next, we illustrate how the number of neighbors $k$ and the projection "
+"grid resolution `nbins` affect the projected particle distribution. From "
+"left to right, the panels show increasing $k$ values (4, 16, 32, 64, "
+"128), and from top to bottom they show increasing `nbins` values (8, 32, "
+"128, 512, 1024)."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:60004
+#, python-brace-format
+msgid ""
+"As $k$ increases, the corresponding value of $h$ also becomes larger, so "
+"each particle influences a broader spatial region and the projected "
+"result becomes smoother. In addition, the difference between the "
+"projected total mass and the true total mass is nearly negligible, with "
+"$\\Delta M / M_{tot} \\lesssim 10^{-5}$."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:80002
+msgid ""
+"By adjusting the settings in `config` and setting `render_double` to "
+"`True`, the numerical accuracy can be further improved and the error can "
+"be reduced:"
+msgstr ""
+

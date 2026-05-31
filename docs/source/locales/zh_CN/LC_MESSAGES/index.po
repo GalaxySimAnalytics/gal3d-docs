@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-26 12:58+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:60
+msgid "Tutorials"
+msgstr "教程"
+
+#: ../../source/index.rst:60
+msgid "Implementation Details"
+msgstr "实现细节"
+
+#: ../../source/index.rst:60
+msgid "Reference"
+msgstr "参考文档"
+
+#: ../../source/index.rst:1
+msgid ""
+"Welcome to the Gal3D documentation! `Gal3D "
+"<https://github.com/GalaxySimAnalytics/gal3d>`_ is a Python library for "
+"three-dimensional morphological modeling of simulated galaxies. It "
+"measures structural properties directly from particle data, including "
+"axis ratios, orientations, center offsets, and higher-order shape "
+"features."
+msgstr ""
+"欢迎阅读Gal3D文档！`Gal3D <https://github.com/GalaxySimAnalytics/gal3d>`_ 是一个对模拟中的星系进行三维形态建模的Python库。"
+"它可直接基于粒子数据测量形态特性随半径的变化，包括轴比、方向、中心偏移和高阶形状特征。"
+
+#: ../../source/index.rst:6
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/index.rst:8
+msgid "Clone the repository and install the package:"
+msgstr "获取源码并安装软件包："
+
+#: ../../source/index.rst:16
+msgid "For editable development:"
+msgstr "可编辑开发安装："
+
+#: ../../source/index.rst:25
+msgid "Scientific Motivation"
+msgstr "科学动机"
+
+#: ../../source/index.rst:27
+msgid ""
+"The intrinsic three-dimensional shapes of galaxies encode important "
+"information about their formation and evolution. In simulations, particle"
+" data provide direct access to the full 3D mass distribution, but "
+"robustly measuring radial variations in shape remains challenging."
+msgstr "星系的内在三维形状包含了关于其形成和演化的重要信息。在模拟中，粒子数据提供了对完整3D质量分布的直接访问，但稳健地测量形状随半径的变化仍然具有挑战性。"
+
+#: ../../source/index.rst:30
+msgid ""
+"``Gal3D`` is designed to address this problem. It combines density-field "
+"reconstruction, radial sampling, and superellipsoid fitting to model the "
+"3D iso-density structure of galaxies and to quantify quantities such as "
+"axis ratios, orientations, center offsets, and higher-order shape "
+"features."
+msgstr ""
+"``Gal3D`` 旨在解决这个问题。它结合了密度场重建、径向采样和超椭球拟合来建模星系的三维等密度结构，并量化诸如轴比、方向、中心偏移和高阶形状特征等量。"
+
+#: ../../source/index.rst:35
+msgid "Citation"
+msgstr "引用"
+
+#: ../../source/index.rst:37
+msgid ""
+"If you use Gal3D in your research or project, please cite the following "
+"reference. Formal publication information will be added once the "
+"corresponding paper is published."
+msgstr ""
+"如果你在研究或项目中使用了 Gal3D，请引用以下参考信息。"
+"待对应论文正式发表后，将补充正式发表信息。"
+
+
+#: ../../source/index.rst:52
+msgid "Documentation Contents"
+msgstr "文档内容"
+
+#: ../../source/index.rst:54
+msgid "This documentation is organized into three main parts:"
+msgstr "本文档分为三个主要部分："
+
+#: ../../source/index.rst:56
+msgid ""
+":ref:`Tutorials <tutorials>`: basic usage, key features, and advanced "
+"examples."
+msgstr ":ref:`教程 <tutorials>`: 基本用法、核心功能和高级示例。"
+
+#: ../../source/index.rst:57
+msgid ""
+":ref:`Implementation Details <details>`: technical descriptions of the "
+"underlying methods and modules."
+msgstr ":ref:`实现细节 <details>`: 底层方法和模块的技术描述。"
+
+#: ../../source/index.rst:58
+msgid ":ref:`Reference <reference>`: the full API reference."
+msgstr ":ref:`参考文档 <reference>`: 完整的API参考。"

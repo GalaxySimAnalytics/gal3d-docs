@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/deeper_dives.rst:6
+msgid "Superellipsoids with Different Shape Parameters"
+msgstr ""
+
+#: ../../source/tutorials/deeper_dives.rst:6
+msgid "Working with Parameter Classes"
+msgstr ""
+
+#: ../../source/tutorials/deeper_dives.rst:6
+msgid "Working with Particle Classes"
+msgstr ""
+
+#: ../../source/tutorials/deeper_dives.rst:2
+msgid "Deeper Dives"
+msgstr ""
+
+#: ../../source/tutorials/deeper_dives.rst:4
+msgid ""
+"This section collects more in-depth examples and discussions on selected "
+"topics."
+msgstr ""
+

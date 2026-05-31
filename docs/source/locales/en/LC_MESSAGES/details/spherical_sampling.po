@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/spherical_sampling.ipynb:10004
+msgid "Uniform Sampling on the Sphere"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10006
+msgid "This document introduces the method used for uniform sampling on a sphere."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10008
+msgid "Why do we need uniform sampling on the sphere? The main reasons are:"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10010
+msgid ""
+"**Equal-weight sampling over direction**: to sample the original data "
+"sufficiently and uniformly in all directions."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10011
+msgid ""
+"**Approximate area weighting**: when fitting surfaces, uniform sampling "
+"can approximately reproduce weighting by surface area."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10013
+msgid ""
+"At present, there are several possible methods for uniform sampling on "
+"the sphere. `Gal3D` adopts a fast and efficient approach: the **Fibonacci"
+" sphere sampling** method."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10015
+msgid ""
+"For a set of $N$ sample points, the coordinates $(x_i, y_i, z_i)$ are "
+"computed as"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10017
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{aligned}\n"
+"x_i &= \\sqrt{1 - z_i^2} \\, \\cos\\left(2\\pi i \\phi^{-1}\\right), \\\\"
+"\n"
+"y_i &= \\sqrt{1 - z_i^2} \\, \\sin\\left(2\\pi i \\phi^{-1}\\right), \\\\"
+"\n"
+"z_i &= \\frac{2i - 1}{N} - 1,\n"
+"\\end{aligned}\n"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10025
+msgid ""
+"where $i = 1, 2, \\ldots, N$, and $\\phi = \\frac{1 + \\sqrt{5}}{2} - 1$ "
+"is the inverse of the golden ratio."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10029
+msgid ""
+"[This article](https://extremelearning.com.au/how-to-evenly-distribute-"
+"points-on-a-sphere-more-effectively-than-the-canonical-fibonacci-"
+"lattice/) provides more background on Fibonacci sphere sampling."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:10031
+msgid ""
+"Note that the Fibonacci method implemented in `Gal3D` is equivalent to "
+"the Canonical Lattice method described there, namely the Offset Fibonacci"
+" Lattice with $\\epsilon = 0.5$."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:20002
+msgid "Example: Fibonacci Sphere Sampling"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:20005
+msgid ""
+"The figure below shows the result of uniform sampling on the sphere with "
+"$N=256$:"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:40002
+msgid "Voronoi Cells and the Area Distribution of Sample Points"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:40005
+#, python-brace-format
+msgid ""
+"By constructing the Voronoi tessellation on the sphere, shown as the "
+"green grid in the figure above, we can compute the area associated with "
+"each sample point. For an ideal uniform sampling, the Voronoi area of "
+"each point should be close to $\\frac{4\\pi}{N}$. The figure below shows "
+"the distribution of Voronoi-cell areas for the case $N=256$:"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:40007
+msgid "**Area distribution**: most regions have areas close to the ideal value."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:40008
+msgid "**Error range**: for most sample points, the error is within 2%."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:50002
+#, python-brace-format
+msgid ""
+"Using the spherical Voronoi tessellation, shown as the green grid in the "
+"figure above, we can compute the area associated with each sample point. "
+"For ideal uniform sampling, the Voronoi area of every sample point should"
+" be equal to $\\frac{4\\pi}{N}$. The figure below shows the distribution "
+"of Voronoi-cell areas for all sample points. Most regions are close to "
+"the ideal value, and for most sample points the error is within 2%."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:70002
+msgid "Definition and Analysis of Sampling Uniformity"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:70005
+msgid "We define the uniformity of the sampling as"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:70007
+msgid ""
+"\n"
+"\\text{Uniformity} = 1 - \\frac{\\sum_{i=1}^{N}\\left|A_i - "
+"\\frac{4\\pi}{N}\\right|}{4\\pi},\n"
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:70011
+#, python-brace-format
+msgid ""
+"where $A_i$ is the Voronoi-cell area of the $i$-th sample point. If "
+"$\\text{Uniformity} \\approx 1$, the sampling is considered highly "
+"uniform."
+msgstr ""
+
+#: ../../source/details/spherical_sampling.ipynb:70013
+msgid ""
+"The figure below shows how the uniformity changes with the number of "
+"sample points $N$:"
+msgstr ""
+

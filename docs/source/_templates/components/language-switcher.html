@@ -1,0 +1,45 @@
+<div class="language-switcher dropdown">
+  <button
+    class="btn btn-sm pst-navbar-icon dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-label="Language switcher"
+    title="Language"
+  >
+    <span class="btn__icon-container">
+      <i class="fa-solid fa-language fa-lg"></i>
+    </span>
+  </button>
+
+  {% set page_depth = pagename.count('/') %}
+  {% set local_prefix = '../' * (page_depth + 1) %}
+
+  <ul class="dropdown-menu dropdown-menu-end">
+    {% for item in supported_languages %}
+      {% if use_dirhtml %}
+        {% if pagename == 'index' %}
+          {% set page_suffix = '' %}
+        {% else %}
+          {% set page_suffix = '/' ~ pagename %}
+        {% endif %}
+      {% else %}
+        {% set page_suffix = '/' ~ pagename ~ '.html' %}
+      {% endif %}
+
+      {% if on_rtd %}
+        {% set target = '/' ~ item.code ~ '/' ~ rtd_version ~ page_suffix %}
+      {% else %}
+        {% set target = local_prefix ~ item.code ~ page_suffix %}
+      {% endif %}
+
+      <li>
+        <a
+          class="dropdown-item{% if item.code == current_language %} active{% endif %}"
+          href="{{ target }}"
+        >
+          {{ item.label }}{% if item.code == current_language %} ✓{% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+[project]
+name = "gal3d-docs"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "gal3d[doc]",
+    "gal3d[optimizer]",
+]
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+gal3d = { path = "../gal3d", editable = true }

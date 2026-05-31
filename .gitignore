@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+docs/build/
+docs/source/locales/**/*/*.mo
+.ipynb_checkpoints/
+
+_autosummary/
+
+
+.DS_Store

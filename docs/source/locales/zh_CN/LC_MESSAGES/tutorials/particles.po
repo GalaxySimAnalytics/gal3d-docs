@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-26 14:01+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/particles.ipynb:10004
+msgid "Using the Particles Class"
+msgstr "使用 Particles 类"
+
+#: ../../source/tutorials/particles.ipynb:10006
+#, python-brace-format
+msgid ""
+"`Gal3D` uses the {py:class}`Particles <gal3d.point.Particles>` class to "
+"manage and operate on particle data."
+msgstr ""
+"`Gal3D` 使用 {py:class}`Particles <gal3d.point.Particles>` 类来管理并操作粒子数据。"
+
+
+#: ../../source/tutorials/particles.ipynb:20002
+msgid ""
+"To initialize the class, you need to provide particle positions (``pos``)"
+" and masses (``mass``). Here we again use particle data from a galaxy in "
+"TNG50-1 as an example."
+msgstr ""
+"初始化该类时，需要提供粒子位置（``pos``）和粒子质量（``mass``）。"
+"这里我们仍以 TNG50-1 中某个星系的粒子数据为例。"
+
+#: ../../source/tutorials/particles.ipynb:40002
+#, python-brace-format
+msgid ""
+"Use the {py:class}`Particles <gal3d.point.Particles>` class to initialize"
+" particle positions and masses. The position array ``pos`` has shape "
+"``(N, 3)``, and the mass array ``mass`` has shape ``(N,)``, where ``N`` "
+"is the number of particles."
+msgstr ""
+"使用 {py:class}`Particles <gal3d.point.Particles>` 类初始化粒子位置和质量。"
+"其中位置数组 ``pos`` 的形状为 ``(N, 3)``，质量数组 ``mass`` 的形状为 ``(N,)``，"
+"``N`` 为粒子数量。"
+
+#: ../../source/tutorials/particles.ipynb:70002
+msgid ""
+"`recenter=False` keeps the original particle positions instead of "
+"recentering them (the default is `True`)."
+msgstr ""
+"`recenter=False` 表示保留原始粒子位置而不进行重新中心化平移（默认值为 `True`）。"
+
+#: ../../source/tutorials/particles.ipynb:70003
+msgid ""
+"`density_estimator` specifies the method used for density estimation. "
+"Here we use `DensityEstimatorSPH`. You can call "
+"`Particles.available_estimators` to see the list of available density "
+"estimators."
+msgstr ""
+"`density_estimator` 用于指定密度估计方法。这里我们使用 `DensityEstimatorSPH`。"
+"你可以调用 `Particles.available_estimators` 查看可用密度估计器列表。"
+
+#: ../../source/tutorials/particles.ipynb:90002
+msgid "About Density Estimators"
+msgstr "关于密度估计器"
+
+#: ../../source/tutorials/particles.ipynb:90003
+#, python-brace-format
+msgid ""
+"When using `DensityEstimatorSPH`, density estimation is performed by "
+"{py:class}`DensityEstimatorSPH "
+"<gal3d.point.density_estimator_plugins.estimator_sph.DensityEstimatorSPH>`."
+msgstr ""
+"当使用 `DensityEstimatorSPH` 时，密度估计由 "
+"{py:class}`DensityEstimatorSPH "
+"<gal3d.point.density_estimator_plugins.estimator_sph.DensityEstimatorSPH>` 执行。"
+
+#: ../../source/tutorials/particles.ipynb:90005
+#, python-brace-format
+msgid ""
+"{py:class}`DensityEstimatorSPH "
+"<gal3d.point.density_estimator_plugins.estimator_sph.DensityEstimatorSPH>`"
+" is a subclass of {py:class}`DensityEstimatorBase "
+"<gal3d.point.density_estimator.DensityEstimatorBase>`. If you want to use"
+" another density estimation method, you can define your own class by "
+"inheriting from `DensityEstimatorBase`. Once such a custom estimator is "
+"defined, it will be automatically registered in "
+"`Particles.available_estimators`."
+msgstr ""
+"{py:class}`DensityEstimatorSPH "
+"<gal3d.point.density_estimator_plugins.estimator_sph.DensityEstimatorSPH>` "
+"是 {py:class}`DensityEstimatorBase "
+"<gal3d.point.density_estimator.DensityEstimatorBase>` 的子类。"
+"如果你希望使用其他密度估计方法，可以继承 `DensityEstimatorBase` 定义自己的类。"
+"自定义估计器定义后，会自动注册到 `Particles.available_estimators` 中。"
+
+#: ../../source/tutorials/particles.ipynb:90007
+#, python-brace-format
+msgid ""
+"For more details on how `DensityEstimatorSPH` works, see {ref}`Density "
+"Estimation <density-estimator>`."
+msgstr ""
+"关于 `DensityEstimatorSPH` 工作机制的更多细节，请参见 {ref}`密度估计 <density-estimator>`。"
+
+#: ../../source/tutorials/particles.ipynb:100002
+msgid "Particle Properties"
+msgstr "粒子属性"
+
+#: ../../source/tutorials/particles.ipynb:100004
+#, python-brace-format
+msgid ""
+"{py:attr}`Particles.parameter <gal3d.point.Particles.parameter>`: the "
+"density at each particle position"
+msgstr ""
+"{py:attr}`Particles.parameter <gal3d.point.Particles.parameter>`：每个粒子位置处的密度"
+
+#: ../../source/tutorials/particles.ipynb:100005
+#, python-brace-format
+msgid ""
+"{py:attr}`Particles.hsm <gal3d.point.Particles.hsm>`: the smoothing "
+"length at each particle position"
+msgstr ""
+"{py:attr}`Particles.hsm <gal3d.point.Particles.hsm>`：每个粒子位置处的平滑长度"
+
+#: ../../source/tutorials/particles.ipynb:120002
+msgid "Querying the Density at Arbitrary Positions"
+msgstr "查询任意位置处的密度"
+
+#: ../../source/tutorials/particles.ipynb:120004
+#, python-brace-format
+msgid ""
+"Use {py:meth}`Particles.get_parameter "
+"<gal3d.point.Particles.get_parameter>` to query the density at any "
+"coordinate:"
+msgstr ""
+"使用 {py:meth}`Particles.get_parameter "
+"<gal3d.point.Particles.get_parameter>` 可查询任意坐标处的密度："
+
+#: ../../source/tutorials/particles.ipynb:140002
+msgid "2D Density Projection"
+msgstr "二维密度投影"
+
+#: ../../source/tutorials/particles.ipynb:140004
+#, python-brace-format
+msgid ""
+"You can use {py:meth}`Particles.project_2d "
+"<gal3d.point.Particles.project_2d>` to obtain a density projection of the"
+" particles after smoothing with a kernel function."
+msgstr ""
+"你可以使用 {py:meth}`Particles.project_2d "
+"<gal3d.point.Particles.project_2d>`，"
+"在核函数平滑后获得粒子的密度投影。"
+
+#: ../../source/tutorials/particles.ipynb:160002
+msgid ""
+"Smoothed Particle Hydrodynamics (SPH) is widely used in fluid "
+"simulations. By smoothing particle distributions, it can better capture "
+"fine fluid structures. Below, we use gas particles as an example to show "
+"their density distribution:"
+msgstr ""
+"平滑粒子流体力学（SPH）广泛用于流体模拟。"
+"通过对粒子分布进行平滑，它能更好地捕捉精细流体结构。"
+"下面我们以气体粒子为例展示其密度分布："
+
+#: ../../source/tutorials/particles.ipynb:180005
+#, python-brace-format
+msgid ""
+"`Gal3D` implements SPH projection using a two-step sampling and "
+"renormalization scheme. A more detailed introduction and examples can be "
+"found in {ref}`SPH Projection <SPH-render2d>`."
+msgstr ""
+"`Gal3D` 使用“两步采样 + 归一化”方案实现 SPH 投影。"
+"更详细的介绍与示例可参见 {ref}`SPH 投影 <SPH-render2d>`。"
+
+#: ../../source/tutorials/particles.ipynb:190002
+msgid "Obtaining the Shape at an Arbitrary Radius"
+msgstr "获取任意半径处的形状"
+
+#: ../../source/tutorials/particles.ipynb:190004
+#, python-brace-format
+msgid ""
+"You can use {py:meth}`Particles.shape_at "
+"<gal3d.point.Particles.shape_at>` to measure the shape at any radius. By "
+"default, this method uses the ellipsoidal iterative shape estimator based"
+" on the density field, namely {py:class}`EllipsoidalShapeEstimator "
+"<gal3d.model_workflow.fit_workflow_plugins.iterate_ellipsoid_continuous.IterateEllipsoidDensity>`."
+msgstr ""
+"你可以使用 {py:meth}`Particles.shape_at "
+"<gal3d.point.Particles.shape_at>` 测量任意半径处的形状。"
+"默认情况下，该方法使用基于密度场的椭球迭代形状估计器，"
+"即 {py:class}`EllipsoidalShapeEstimator "
+"<gal3d.model_workflow.fit_workflow_plugins.iterate_ellipsoid_continuous.IterateEllipsoidDensity>`。"
+
+#: ../../source/tutorials/particles.ipynb:200002
+#, python-brace-format
+msgid ""
+"\n"
+"\\large\n"
+"\\begin{array}{r c l}\n"
+"& \\mathbf{Coordinate} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{RotateOnly} \\\\\n"
+"\\text{Func} & : & \\ \\mathbf{X}'=\\mathbf{X}\\,R_{zyx}^{\\mathsf "
+"T}(\\alpha,\\beta,\\gamma) \\\\\n"
+"\\text{Param (3)} & : & \\alpha=-0.02,\\ \\beta=-0.01,\\ \\gamma=3.14 "
+"\\\\\n"
+"\\text{Derived\\ param} & : & \\ "
+"R_{zyx}(\\alpha,\\beta,\\gamma)=R_{z}(\\alpha)\\,R_{y}(\\beta)\\,R_{x}(\\gamma)"
+" \\\\\n"
+"& \\mathbf{Geometry} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{Ellipsoid} \\\\\n"
+"\\text{Func} & : & ([\\frac{x}{a}]^2 + [\\frac{y}{b}]^2 + "
+"[\\frac{z}{c}]^2) \\\\\n"
+"\\text{Param (3)} & : & a=2.00,\\ \\epsilon_{ab}=0.38,\\ "
+"\\epsilon_{bc}=0.58 \\\\\n"
+"\\text{Derived\\ param} & : & b = a(1 - \\epsilon_{ab})=1.25,\\ c = b(1 -"
+" \\epsilon_{bc})=0.52 \\\\\n"
+"\\end{array}\n"
+msgstr ""
+

@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-31 18:28+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10004
+msgid "Generalized Ellipsoid Functions"
+msgstr "广义椭球函数"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10006
+msgid ""
+"`Gal3D` uses nested generalized ellipsoid functions by default to fit the"
+" three-dimensional morphology of galaxies. This section introduces the "
+"definition of the generalized ellipsoid function and the corresponding "
+"fitting method in detail."
+msgstr ""
+"`Gal3D` 默认使用嵌套的广义椭球函数来拟合星系的三维形态。本节将详细介绍广义椭"
+"球函数的定义及其对应的拟合方法。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10008
+msgid "**Classical ellipsoid**"
+msgstr "**经典椭球**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10010
+msgid "The classical ellipsoid function is"
+msgstr "经典椭球函数为"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10012
+#, python-brace-format
+msgid ""
+"\n"
+"\\left(\\frac{x}{a}\\right)^2 + \\left(\\frac{y}{b}\\right)^2 + "
+"\\left(\\frac{z}{c}\\right)^2\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10016
+msgid ""
+"This function describes a standard ellipsoid whose shape is determined by"
+" the parameters $a$, $b$, and $c$, which represent the semi-axis lengths "
+"along the $x$-, $y$-, and $z$-directions, respectively."
+msgstr ""
+"该函数描述了一个标准椭球，其形状由参数 $a$、$b$ 和 $c$ 决定，它们分别表示沿 "
+"$x$、$y$ 和 $z$ 方向的半轴长度。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10018
+msgid "**Generalized ellipsoid**"
+msgstr "**广义椭球**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10020
+msgid ""
+"In `Gal3D`, shape indices are introduced into the standard ellipsoid "
+"function, and the generalized ellipsoid function is defined as"
+msgstr ""
+"在 `Gal3D` 中，标准椭球函数中引入了形状指数，并将广义椭球函数定义为"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10022
+#, python-brace-format
+msgid ""
+"\n"
+"\\Bigl[\\Bigl(\\frac{x}{a}\\Bigr)^2\\Bigr]^{S_a}\n"
+"+\\Bigl[\\Bigl(\\frac{y}{b}\\Bigr)^2\\Bigr]^{S_b}\n"
+"+\\Bigl[\\Bigl(\\frac{z}{c}\\Bigr)^2\\Bigr]^{S_c}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10028
+msgid ""
+"When $S_a = S_b = S_c = 1$, the generalized ellipsoid reduces to the "
+"standard ellipsoid. The introduction of shape indices makes the ellipsoid"
+" more flexible and allows it to represent more complex geometric "
+"structures."
+msgstr ""
+"当 $S_a = S_b = S_c = 1$ 时，广义椭球就退化为标准椭球。形状指数的引入使椭球"
+"具有更高的灵活性，从而能够表示更复杂的几何结构。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:10031
+#, python-brace-format
+msgid ""
+"For visualizations of ellipsoids with different shape parameters, see "
+"{ref}`Ellipsoids with Different Shape Parameters <ellipsoid-shape-show>`."
+msgstr ""
+"关于不同形状参数下椭球的可视化，可参见 {ref}`不同形状参数的椭球 "
+"<ellipsoid-shape-show>`。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20002
+msgid "How to Define Whether a Point Lies on the Surface"
+msgstr "如何定义一个点是否位于表面上"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20004
+msgid "For the generalized ellipsoid function"
+msgstr "对于广义椭球函数"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20006
+#, python-brace-format
+msgid ""
+"\n"
+"f(x,y,z) \\;=\\; \\Bigl[\\Bigl(\\frac{x}{a}\\Bigr)^2\\Bigr]^{S_a}\n"
+"+\\Bigl[\\Bigl(\\frac{y}{b}\\Bigr)^2\\Bigr]^{S_b}\n"
+"+\\Bigl[\\Bigl(\\frac{z}{c}\\Bigr)^2\\Bigr]^{S_c},\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20012
+msgid ""
+"we define a point $(x, y, z)$ to lie on the surface when it satisfies "
+"$f(x, y, z) = 1$."
+msgstr ""
+"我们定义当点 $(x, y, z)$ 满足 $f(x, y, z) = 1$ 时，该点位于表面上。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20014
+msgid ""
+"However, if we use $f(x, y, z)$ directly, its value is strongly affected "
+"by the shape indices $S_a$, $S_b$, and $S_c$, and it can increase rapidly"
+" with coordinate magnitude, which makes numerical calculations less "
+"stable."
+msgstr ""
+"然而，如果直接使用 $f(x, y, z)$，其取值会强烈受到形状指数 $S_a$、$S_b$ 和 "
+"$S_c$ 的影响，并且会随着坐标大小快速增长，这会使数值计算的稳定性变差。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20016
+msgid ""
+"Therefore, we redefine the quantity using a distance-ratio function $d(x,"
+" y, z)$:"
+msgstr ""
+"因此，我们利用距离比函数 $d(x, y, z)$ 重新定义这一量："
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20018
+msgid ""
+"\n"
+"d(x, y, z) = \\frac{\\sqrt{x^2 + y^2 + z^2}}{\\sqrt{x_e^2 + y_e^2 + "
+"z_e^2}}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20022
+msgid "where $(x_e, y_e, z_e) = k(x, y, z)$ and $f(x_e, y_e, z_e) = 1$."
+msgstr "其中 $(x_e, y_e, z_e) = k(x, y, z)$，且 $f(x_e, y_e, z_e) = 1$。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20024
+msgid ""
+"The quantity $d(x, y, z)$ measures the ratio between the distance of the "
+"point from the origin and the distance from the origin to the ellipsoidal"
+" surface in the same direction. When $d(x, y, z) = 1$, the point lies on "
+"the surface."
+msgstr ""
+"值 $d(x, y, z)$ 衡量的是该点到原点距离与同一方向上椭球表面到原点距离之间的比"
+"值。当 $d(x, y, z) = 1$ 时，该点位于表面上。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:20026
+msgid ""
+"The examples below compare the spatial distributions of $f(x, y, z)$ and "
+"$d(x, y, z)$. One can see that $d(x, y, z)$ varies more linearly for "
+"different shape indices, with more evenly distributed contours, whereas "
+"$f(x, y, z)$ is much more strongly affected by the exponent values."
+msgstr ""
+"下面的示例比较了 $f(x, y, z)$ 与 $d(x, y, z)$ 的空间分布。可以看到，对于不同"
+"的形状指数，$d(x, y, z)$ 的变化更加线性，等值线分布也更均匀；而 $f(x, y, z)$"
+" 则更强烈地受到指数取值的影响。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:30002
+msgid "Spatial Distribution for the Standard Ellipsoid ($S_a = S_b = 1$)"
+msgstr "标准椭球的空间分布（$S_a = S_b = 1$）"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:40002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.100, \\infty] \\\\\n"
+"\\mathrm{eps\\_ab} & : & 0.500 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{eps\\_bc} & : & 0.500 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{sa} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sb} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sc} & : & 1.000 \\in [0.200, 2.000]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:60002
+msgid "Variation of $f$ and $d$ along the principal axis"
+msgstr "$f$ 与 $d$ 沿主轴方向的变化"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:80002
+msgid "Spatial Distribution for Shape Indices $S_a = S_b = 0.2$"
+msgstr "形状指数 $S_a = S_b = 0.2$ 时的空间分布"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:110002
+msgid "Spatial Distribution for Shape Indices $S_a = S_b = 2$"
+msgstr "形状指数 $S_a = S_b = 2$ 时的空间分布"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140002
+msgid "Solving for the Point on the Ellipsoidal Surface in an Arbitrary Direction"
+msgstr "求解任意方向上椭球表面上的点"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140004
+msgid ""
+"The key to computing $d(x, y, z)$ is to find the point $(x_e, y_e, z_e)$ "
+"on the generalized ellipsoidal surface along the direction of $(x, y, "
+"z)$."
+msgstr ""
+"计算 $d(x, y, z)$ 的关键，在于找到沿 $(x, y, z)$ 方向、位于广义椭球表面上的"
+"点 $(x_e, y_e, z_e)$。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140006
+msgid ""
+"`Gal3D` provides several numerical iterative methods, including the "
+"Newton method, Halley's method, and the Householder method, to solve for "
+"this point."
+msgstr ""
+"`Gal3D` 提供了多种数值迭代方法来求解这一点，包括 Newton 法、Halley 法和 "
+"Householder 法。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140008
+msgid "**Problem definition**"
+msgstr "**问题定义**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140010
+msgid ""
+"Given $(x, y, z)$, the ellipsoid parameters $(a, b, c)$, and the shape "
+"indices $(S_a, S_b, S_c)$, we need to solve for a scaling factor $k$ such"
+" that"
+msgstr ""
+"给定 $(x, y, z)$、椭球参数 $(a, b, c)$ 以及形状指数 $(S_a, S_b, S_c)$，我们"
+"需要求解一个缩放因子 $k$，使得"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140012
+msgid "(x_e, y_e, z_e) = k(x, y, z)"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140014
+msgid "and the generalized ellipsoid equation is satisfied:"
+msgstr "并满足广义椭球方程："
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140016
+msgid ""
+"\n"
+"f(x_e, y_e, z_e) = 1\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140020
+msgid "that is,"
+msgstr "也就是说，"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140022
+#, python-brace-format
+msgid ""
+"\n"
+"f(kx, ky, kz) = \\left(\\frac{kx}{a}\\right)^{2S_a} + "
+"\\left(\\frac{ky}{b}\\right)^{2S_b} + \\left(\\frac{kz}{c}\\right)^{2S_c}"
+"\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140026
+msgid "Denote this by $f(k) = f(kx, ky, kz)$."
+msgstr "记其为 $f(k) = f(kx, ky, kz)$。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140028
+msgid "**Numerical iterative methods**"
+msgstr "**数值迭代方法**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140034
+msgid ""
+"The convergence speed increases in the order Newton, Halley, and "
+"Householder, but Halley and Householder require more computation per "
+"iteration. In practice, the differences are usually small. Because "
+"Newton's method may fail to converge in some extreme cases, `Gal3D` uses "
+"Halley's method by default."
+msgstr ""
+"其收敛速度依次为 Newton 法、Halley 法和 Householder 法，但 Halley 法和 "
+"Householder 法每次迭代需要更多计算。在实际应用中，这些差异通常较小。由于牛"
+"顿法在某些极端情况下可能无法收敛，`Gal3D` 默认使用 Halley 法。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140036
+msgid ""
+"For the computation of the directional distance ratio $d(x, y, z)$ here, "
+"the main configurable option is `config.ellipsoid_s.DistIteration`:"
+msgstr ""
+"对于这里方向距离比 $d(x, y, z)$ 的计算，主要的可配置选项是 "
+"`config.ellipsoid_s.DistIteration`："
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140044
+msgid "For numerical iteration, define the error function"
+msgstr "对于数值迭代，定义误差函数"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140046
+msgid ""
+"\n"
+"F(k) = (f(k) - 1)^2\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140050
+msgid "The general form of the iteration is"
+msgstr "迭代的一般形式为"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140052
+#, python-brace-format
+msgid ""
+"\n"
+"k_{n+1} = k_n - \\Delta\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140056
+msgid ""
+"where $\\Delta$ is the step size. The specific expressions for different "
+"methods are:"
+msgstr "其中 $\\Delta$ 为步长。不同方法的具体表达式为："
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140058
+msgid "Newton method:"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140060
+#, python-brace-format
+msgid ""
+"\n"
+"k_{n+1} = k_n - \\frac{F(k_n)}{F'(k_n)}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140064
+msgid "Halley's method:"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140066
+#, python-brace-format
+msgid ""
+"\n"
+"k_{n+1} = k_n - \\frac{2F(k_n)F'(k_n)}{2F'(k_n)^2 + F''(k_n)F(k_n)}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140070
+msgid "Householder method:"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140072
+#, python-brace-format
+msgid ""
+"\n"
+"k_{n+1} = k_n - \\frac{6F(F')^2 - 3F^2F''}{6(F')^3 - 6FF'F'' + F^2F'''}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140076
+msgid "**Derivative evaluation**"
+msgstr "**导数计算**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140078
+msgid ""
+"The first-, second-, and third-order derivatives of the error function "
+"$F(k)$ are"
+msgstr ""
+"误差函数 $F(k)$ 的一阶、二阶和三阶导数分别为"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140080
+msgid ""
+"\n"
+"F'(k) = 2(f(k)-1)f'(k)\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140084
+msgid ""
+"\n"
+"F''(k) = 2(f(k)-1)f''(k) + 2f'(k)^2\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140088
+msgid ""
+"\n"
+"F'''(k) = 2(f(k)-1)f'''(k) + 6f'(k)f''(k)\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140092
+msgid "The first-, second-, and third-order derivatives of $f(k)$ are"
+msgstr "$f(k)$ 的一阶、二阶和三阶导数分别为"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140094
+#, python-brace-format
+msgid ""
+"\n"
+"f'(k) = \\frac{2S_a}{k}\\left(\\frac{xk}{a}\\right)^{2S_a} + "
+"\\frac{2S_b}{k}\\left(\\frac{yk}{b}\\right)^{2S_b} + "
+"\\frac{2S_c}{k}\\left(\\frac{zk}{c}\\right)^{2S_c}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140098
+#, python-brace-format
+msgid ""
+"\n"
+"f''(k) = \\frac{2S_a(2S_a-1)}{k^2}\\left(\\frac{xk}{a}\\right)^{2S_a} + "
+"\\frac{2S_b(2S_b-1)}{k^2}\\left(\\frac{yk}{b}\\right)^{2S_b} + "
+"\\frac{2S_c(2S_c-1)}{k^2}\\left(\\frac{zk}{c}\\right)^{2S_c}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140102
+#, python-brace-format
+msgid ""
+"\n"
+"f'''(k) = "
+"\\frac{2S_a(2S_a-1)(2S_a-2)}{k^3}\\left(\\frac{xk}{a}\\right)^{2S_a} + "
+"\\frac{2S_b(2S_b-1)(2S_b-2)}{k^3}\\left(\\frac{yk}{b}\\right)^{2S_b} + "
+"\\frac{2S_c(2S_c-1)(2S_c-2)}{k^3}\\left(\\frac{zk}{c}\\right)^{2S_c}\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140106
+msgid "**Adaptive step-size strategy**"
+msgstr "**自适应步长策略**"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140108
+msgid ""
+"In addition, `Gal3D` implements an adaptive step-size strategy: at each "
+"iteration, the step is multiplied by an adaptive factor $\\lambda$,"
+msgstr ""
+"此外，`Gal3D` 还实现了自适应步长策略：在每次迭代中，步长都会乘以一个自适应因"
+"子 $\\lambda$，"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140110
+#, python-brace-format
+msgid ""
+"\n"
+"k_{n+1} = k_n - \\lambda \\Delta\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140114
+#, python-brace-format
+msgid ""
+"and $\\lambda$ is adjusted dynamically to ensure that $F(k_{n+1}) < "
+"F(k_n)$, thereby improving both convergence efficiency and stability."
+msgstr ""
+"并动态调整 $\\lambda$，以确保 $F(k_{n+1}) < F(k_n)$，从而同时提高收敛效率和"
+"稳定性。"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140117
+msgid ""
+"In practical fitting, one first samples $n$ points uniformly on the "
+"sphere and then minimizes the error function"
+msgstr ""
+"在实际拟合中，首先在球面上均匀采样 $n$ 个点，然后最小化误差函数"
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140119
+#, python-brace-format
+msgid ""
+"\n"
+"\\chi^2 = \\sum_{i=1}^{n} r_i^2(d(x_i, y_i, z_i)-1)^2\n"
+msgstr ""
+
+#: ../../source/details/generalized_ellipsoid.ipynb:140123
+msgid ""
+"where the coefficient $r_i^2$ represents the approximate area weight of "
+"each sampled point."
+msgstr "其中系数 $r_i^2$ 表示每个采样点近似对应的面积权重。"
+

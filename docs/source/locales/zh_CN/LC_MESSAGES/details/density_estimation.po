@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-31 18:23+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/density_estimation.ipynb:10004
+msgid "Density Estimation"
+msgstr "密度估计"
+
+#: ../../source/details/density_estimation.ipynb:10006
+msgid ""
+"Given the three-dimensional coordinates of a set of particles and their "
+"corresponding masses, how can we estimate the mass density at an "
+"arbitrary position?"
+msgstr ""
+"常见的方法包括基于网格剖分的方法，例如 Voronoi 网格剖分和 Delaunay 网格剖分，以及平滑"
+"粒子流体力学（SPH）。这些方法在粒子质量分布的形状和范围上各不相同。"
+
+#: ../../source/details/density_estimation.ipynb:10008
+msgid ""
+"Common approaches include tessellation-based methods, such as Voronoi and"
+" Delaunay tessellations, as well as Smoothed Particle Hydrodynamics "
+"(SPH). These methods differ in how particle mass is distributed in shape "
+"and extent."
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10010
+msgid ""
+"Among them, SPH provides a good balance between computational efficiency "
+"and accuracy, so `Gal3D` adopts the SPH approach, which can also be "
+"viewed as an adaptive kernel density estimation (adaptive KDE) method. "
+"SPH distributes the mass of point particles into a continuous mass-"
+"density field through a kernel function."
+msgstr ""
+"其中，SPH 在计算效率和精度之间提供了较好的平衡，因此 `Gal3D` 采用了 SPH 方"
+"法；它也可以被看作一种自适应核密度估计（adaptive KDE）方法。SPH 通过核函数"
+"将点粒子的质量分配到连续的质量密度场中。"
+
+#: ../../source/details/density_estimation.ipynb:10012
+msgid "SPH Density Estimation"
+msgstr "SPH 密度估计"
+
+#: ../../source/details/density_estimation.ipynb:10014
+#, python-brace-format
+msgid ""
+"By default, `Gal3D` uses the cubic spline kernel, $W(\\mathbf{r}, h) = "
+"w\\left(\\dfrac{r}{h}\\right)$, whose explicit form is"
+msgstr ""
+"默认情况下，`Gal3D` 使用三次样条核函数，$W(\\mathbf{r}, h) = "
+"w\\left(\\dfrac{r}{h}\\right)$，其显式形式为"
+
+#: ../../source/details/density_estimation.ipynb:10016
+#, python-brace-format
+msgid ""
+"\n"
+"    w(u) = \\frac{8}{\\pi} \\begin{cases}\n"
+"        1 - 6 u^{2} + 6 u^{3}, & 0 \\le u \\le \\tfrac{1}{2},\\\\[6pt]\n"
+"        2 (1 - u)^{3}, & \\tfrac{1}{2} < u \\le 1,\\\\[6pt]\n"
+"        0, & \\text{otherwise.}\n"
+"    \\end{cases}\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10024
+#: ../../source/details/density_estimation.ipynb:20021
+msgid "and it satisfies the normalization condition"
+msgstr "并满足归一化条件"
+
+#: ../../source/details/density_estimation.ipynb:10026
+#, python-brace-format
+msgid ""
+"\n"
+"    4 \\pi \\int_{0}^{\\infty} w(u) u^{2} \\mathrm{d}u = 1.\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:10030
+msgid ""
+"Here, $h$ is a key parameter in SPH that determines the spatial extent of"
+" a particle's influence. If $h$ is too large, the density field becomes "
+"overly smooth and fails to capture fine structures between particles. If "
+"$h$ is too small, the density field may become noisy. Therefore, choosing"
+" an appropriate value of $h$ is essential for good SPH performance."
+msgstr ""
+"这里，$h$ 是 SPH 中的一个关键参数，用于决定粒子影响范围的空间尺度。若 $h$ "
+"过大，密度场会过于平滑，从而无法刻画粒子之间的精细结构；若 $h$ 过小，密度场"
+"则可能变得噪声较大。因此，选择合适的 $h$ 值对于获得良好的 SPH 效果至关重要。"
+
+#: ../../source/details/density_estimation.ipynb:10032
+msgid ""
+"In `Gal3D`, the value of $h$ for each particle is defined as the distance"
+" to its $k$-th nearest neighbor. This allows $h$ to adapt automatically "
+"to the local density environment, improving the stability of the density "
+"estimate."
+msgstr ""
+"在 `Gal3D` 中，每个粒子的 $h$ 被定义为其到第 $k$ 个最近邻粒子的距离。这使得"
+"$h$ 能够根据局部密度环境自动调整，从而提高密度估计的稳定性。"
+
+#: ../../source/details/density_estimation.ipynb:10034
+msgid ""
+"To perform nearest-neighbor searches, `Gal3D` uses "
+"[scipy.spatial.KDTree](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.KDTree.html#scipy.spatial.KDTree)."
+" By default, `Gal3D` sets `k=32` to define the particle neighborhood and "
+"determine $h$."
+msgstr ""
+"为了执行最近邻搜索，`Gal3D` 使用 "
+"[scipy.spatial.KDTree](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.KDTree.html#scipy.spatial.KDTree)。"
+"默认情况下，`Gal3D` 设置 `k=32` 来定义粒子的邻域并确定 $h$。"
+
+#: ../../source/details/density_estimation.ipynb:10036
+msgid ""
+"For the density $\\rho_i$ at an arbitrary position, the estimate is "
+"computed from the $k$ nearest particles as"
+msgstr ""
+"对于任意位置处的密度 $\\rho_i$，其估计值由最近的 $k$ 个粒子计算得到："
+
+#: ../../source/details/density_estimation.ipynb:10038
+#, python-brace-format
+msgid ""
+"\n"
+"    \\rho_i = \\sum_{j=1}^{k} m_j W(\\mathbf{r}_i - \\mathbf{r}_j, h_i)\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20004
+msgid "SPH Projection"
+msgstr "SPH 投影"
+
+#: ../../source/details/density_estimation.ipynb:20006
+#, python-brace-format
+msgid ""
+"In `Gal3D`, SPH projection uses the projected form of the cubic spline "
+"kernel, $\\Sigma\\left(\\dfrac{R}{h}\\right)$, given by"
+msgstr ""
+"在 `Gal3D` 中，SPH 投影使用三次样条核函数的投影形式 "
+"$\\Sigma\\left(\\dfrac{R}{h}\\right)$，其表达式为"
+
+#: ../../source/details/density_estimation.ipynb:20008
+msgid ""
+"\n"
+"    \\Sigma(q) = \\dfrac{2}{\\pi}\n"
+"    \\begin{cases}\n"
+"        (4 + 26q^2)\\sqrt{1-q^2} - (1 + 26q^2)\\sqrt{1-4q^2} \\\\\n"
+"        \\qquad - 18q^4 \\ln\\left(\\dfrac{2q}{1+\\sqrt{1-4q^2}}\\right)\n"
+"        - "
+"6q^2(4+q^2)\\ln\\left(\\dfrac{2+2\\sqrt{1-q^2}}{1+\\sqrt{1-4q^2}}\\right)"
+"\n"
+"        & 0 \\leq q \\leq \\tfrac{1}{2}, \\\\[12pt]\n"
+"        2(2 + 13q^2)\\sqrt{1-q^2} + "
+"6q^2(4+q^2)\\ln\\left(\\dfrac{q}{1+\\sqrt{1-q^2}}\\right)\n"
+"        & \\tfrac{1}{2} < q \\leq 1, \\\\[12pt]\n"
+"        0 & \\text{otherwise.}\n"
+"    \\end{cases}\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20023
+#, python-brace-format
+msgid ""
+"\n"
+"    2 \\pi \\int_{0}^{\\infty} \\Sigma(q) q \\mathrm{d}q = 1.\n"
+msgstr ""
+
+#: ../../source/details/density_estimation.ipynb:20027
+msgid ""
+"For a given two-dimensional grid, particle mass is distributed onto the "
+"grid using the projected kernel. When the particle size is $\\lesssim$ "
+"the grid size, `Gal3D` uses [particle "
+"subsampling](https://arxiv.org/abs/2106.05281) to reduce numerical "
+"errors. In addition, to preserve mass conservation in the projection, the"
+" contribution from each particle is renormalized."
+msgstr ""
+"对于给定的二维网格，粒子质量通过投影核函数分配到网格上。当粒子尺寸 "
+"$\\lesssim$ 网格尺寸时，`Gal3D` 使用 [particle "
+"subsampling](https://arxiv.org/abs/2106.05281) 来减小数值误差。此外，为了"
+"在投影中保持质量守恒，每个粒子的贡献都会被重新归一化。"
+
+#: ../../source/details/density_estimation.ipynb:20029
+msgid ""
+"The figure below shows an example of how the mass of a single particle, "
+"indicated by the red point and its corresponding red circle, is "
+"distributed on a grid, and how the subsampling method improves the "
+"accuracy."
+msgstr ""
+"下图展示了一个示例：单个粒子的质量如何分配到网格上，其中红点及其对应的红色圆"
+"表示该粒子，同时也展示了 subsampling 方法如何提高精度。"
+
+#: ../../source/details/density_estimation.ipynb:40002
+msgid "Example"
+msgstr "示例"
+
+#: ../../source/details/density_estimation.ipynb:40004
+msgid ""
+"Below is a simple example in which 10,000 particles are generated with "
+"random three-dimensional coordinates and random masses, and the total "
+"mass is normalized to $10^8$:"
+msgstr ""
+"下面给出一个简单示例：生成 10,000 个具有随机三维坐标和随机质量的粒子，并将总"
+"质量归一化为 $10^8$："
+
+#: ../../source/details/density_estimation.ipynb:60002
+msgid ""
+"Next, we illustrate how the number of neighbors $k$ and the projection "
+"grid resolution `nbins` affect the projected particle distribution. From "
+"left to right, the panels show increasing $k$ values (4, 16, 32, 64, "
+"128), and from top to bottom they show increasing `nbins` values (8, 32, "
+"128, 512, 1024)."
+msgstr ""
+"接下来，我们展示最近邻数 $k$ 和投影网格分辨率 `nbins` 如何影响粒子的投影分"
+"布。从左到右，各面板对应逐渐增大的 $k$ 值（4、16、32、64、128）；从上到下，"
+"对应逐渐增大的 `nbins` 值（8、32、128、512、1024）。"
+
+#: ../../source/details/density_estimation.ipynb:60004
+#, python-brace-format
+msgid ""
+"As $k$ increases, the corresponding value of $h$ also becomes larger, so "
+"each particle influences a broader spatial region and the projected "
+"result becomes smoother. In addition, the difference between the "
+"projected total mass and the true total mass is nearly negligible, with "
+"$\\Delta M / M_{tot} \\lesssim 10^{-5}$."
+msgstr ""
+"随着 $k$ 的增大，对应的 $h$ 值也会变大，因此每个粒子会影响更广的空间区域，"
+"投影结果也会更加平滑。此外，投影后的总质量与真实总质量之间的差异几乎可以忽"
+"略，满足 $\\Delta M / M_{tot} \\lesssim 10^{-5}$。"
+
+#: ../../source/details/density_estimation.ipynb:80002
+msgid ""
+"By adjusting the settings in `config` and setting `render_double` to "
+"`True`, the numerical accuracy can be further improved and the error can "
+"be reduced:"
+msgstr ""
+"通过调整 `config` 中的设置，并将 `render_double` 设为 `True`，可以进一步提"
+"高数值精度并减小误差："
+

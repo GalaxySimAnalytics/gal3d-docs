@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:10004
+msgid "Superellipsoids with Different Shape Parameters"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:10006
+msgid ""
+"The examples below illustrate how different shape parameters affect the "
+"geometry of a generalized ellipsoid."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:10008
+msgid "A generalized ellipsoid is described by the following equation:"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:10010
+#, python-brace-format
+msgid ""
+"\n"
+"f(x,y,z) \\;=\\; \\Bigl[\\Bigl(\\frac{x}{a}\\Bigr)^2\\Bigr]^{S_a}\n"
+"+\\Bigl[\\Bigl(\\frac{y}{b}\\Bigr)^2\\Bigr]^{S_b}\n"
+"+\\Bigl[\\Bigl(\\frac{z}{c}\\Bigr)^2\\Bigr]^{S_c}\n"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:10016
+#, python-brace-format
+msgid ""
+"where $a$, $b$, and $c$ are the semi-axis lengths along the $x$-, $y$-, "
+"and $z$-axes, respectively.   $S_a$, $S_b$, and $S_c$ are the shape "
+"indices along the three axes.   We also define the three ellipticities as"
+" $\\varepsilon_{ab} = 1 - \\frac{b}{a}$, $\\varepsilon_{ac} = 1 - "
+"\\frac{c}{a}$, and $\\varepsilon_{bc} = 1 - \\frac{c}{b}$."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:20002
+msgid "Initializing the Shape"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:20004
+#, python-brace-format
+msgid ""
+"Here we mainly use the `StructureCore` class, which integrates coordinate"
+" transformations ({py:class}`CoordinateBase "
+"<gal3d.shape.coordinate.CoordinateBase>`) and geometry generation "
+"({py:class}`GeometryBase <gal3d.shape.geometry.GeometryBase>`). By "
+"setting different parameters, you can generate different three-"
+"dimensional shapes."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:20006
+msgid ""
+"You can inspect all available initialization options using "
+"`StructureCore.available_options()`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:40002
+msgid ""
+"We choose `EulerShift` as the coordinate transformation and `Ellipsoid_S`"
+" as the geometry. As you can see, `shape.parameters` contains 12 "
+"parameters. In this tutorial, we focus on the last six parameters, which "
+"describe the geometric shape itself."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:50002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{x} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{y} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{z} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{ang1} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{ang2} & : & 0.000 \\in [-1.571, 1.571] \\\\\n"
+"\\mathrm{ang3} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.100, \\infty] \\\\\n"
+"\\mathrm{eps\\_ab} & : & 0.200 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{eps\\_bc} & : & 0.500 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{sa} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sb} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sc} & : & 1.000 \\in [0.200, 2.000]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:60002
+msgid "The Two-Dimensional Case"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:60004
+msgid ""
+"We begin with the two-dimensional case. Here we use `generate_slice2D` to"
+" obtain a 2D slice of the ellipsoid."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:60006
+msgid ""
+"The figure below shows how the ellipticity `eps_ab` and the shape indices"
+" `sa` and `sb` affect the 2D shape."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:60008
+msgid ""
+"The values of `sa` and `sb` for each subplot are shown in the panel "
+"titles. Within a given subplot, different values of `eps_ab` are "
+"indicated by color."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:60010
+msgid ""
+"Larger shape-index values make the shape boxier, while smaller values "
+"make it more diamond-like or even star-like."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80002
+msgid "The Three-Dimensional Case"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80004
+msgid ""
+"Using `generate_edge3D`, we can obtain the three-dimensional boundary of "
+"the ellipsoid and then visualize its shape with `plot_surface`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80006
+msgid "Effect of Ellipticity"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80008
+msgid ""
+"The figure below shows how the ellipticities `eps_ab` and `eps_bc` affect"
+" the shape of a standard ellipsoid with `sa=sb=sc=1`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80010
+msgid ""
+"Larger ellipticity values make the ellipsoid more flattened or elongated,"
+" while smaller values produce shapes that are closer to spherical."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:80012
+msgid ""
+"Different combinations of ellipticity can therefore generate a wide range"
+" of shapes, including spheres, disk-like configurations, oblate "
+"ellipsoids, and prolate ellipsoids."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:100002
+msgid "Effect of the Shape Indices"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:100004
+msgid ""
+"The figure below shows how the shape indices `sa` and `sb` affect the "
+"shape of the ellipsoid for fixed ellipticities `eps_ab=0.5` and "
+"`eps_bc=0.2`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:100006
+msgid "Larger shape-index values make the ellipsoid boxier."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:120002
+msgid "Other Parameter Combinations"
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:120004
+msgid "With `sa=sb=sc=4`, vary `eps_ab` and `eps_bc`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:140002
+msgid "With `sa=sb=0.5` and `sc=1`, vary `eps_ab` and `eps_bc`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:160002
+msgid "With `sa=0.5`, `sb=2`, and `sc=1`, vary `eps_ab` and `eps_bc`."
+msgstr ""
+
+#: ../../source/tutorials/shapes_ellipsoid_s.ipynb:180003
+msgid "With `sa=2`, `sb=0.5`, and `sc=1`, vary `eps_ab` and `eps_bc`."
+msgstr ""
+

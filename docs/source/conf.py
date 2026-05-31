@@ -20,7 +20,23 @@ sys.path.append(os.path.join(DOCS_SOURCE, "sphinxext"))
 project = 'Gal3D'
 copyright = str(datetime.now().year)
 
-language = os.environ.get('SPHINX_LANGUAGE') or 'en'
+language = (
+    os.environ.get("READTHEDOCS_LANGUAGE")
+    or os.environ.get("SPHINX_LANGUAGE")
+    or "en"
+)
+
+html_context = {
+    "current_language": language,
+    "supported_languages": [
+        {"code": "en", "label": "English"},
+        {"code": "zh_CN", "label": "中文"},
+    ],
+    "rtd_version": os.environ.get("READTHEDOCS_VERSION", "latest"),
+    "on_rtd": os.environ.get("READTHEDOCS") == "True",
+    "use_dirhtml": False,
+}
+
 # Set author based on language
 author = "卢帅" if language == "zh_CN" else "Shuai Lu"
 
@@ -201,6 +217,11 @@ html_static_path = ['_static']
 html_css_files = ['gal3d.css']
 
 #html_logo = "_static/logo.png" # set by dark/light logo in html_theme_options
+
+
+# -- Options for internationalization ------------------------------------------
+locale_dirs = ["locales"]
+gettext_compact = False
 
 # -- Options for autodoc extension -------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#configuration

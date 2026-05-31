@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/parameters.ipynb:10004
+msgid "Working with the `Parameters` Class"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:10006
+#, python-brace-format
+msgid ""
+"`Gal3D` uses the {py:class}`Parameters "
+"<gal3d.optimization.parameter.Parameters>` class to manage and store "
+"model parameters."
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:20002
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:30002
+msgid "We can define a set of parameters as follows:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:40002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [-\\infty, \\infty] \\\\\n"
+"\\mathrm{b} & : & 2.000 \\in [-\\infty, \\infty] \\\\\n"
+"\\mathrm{c} & : & 1.000 \\in [-\\infty, \\infty]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:50002
+#, python-brace-format
+msgid ""
+"Each parameter value is represented by a {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` object."
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:50004
+msgid ""
+"The lower bound (`lb`) and upper bound (`ub`) of each parameter can be "
+"specified explicitly. If they are not given, they default to negative "
+"infinity and positive infinity, respectively."
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:60002
+msgid "3.000 \\in [-\\infty, \\infty]"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:70002
+msgid "You can modify `lb` and `ub` directly:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:90002
+msgid "You can also set bounds in batch using the `set_ub` and `set_lb` methods:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:110002
+msgid "Adding Extra Information and Derived Parameters"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:110004
+msgid ""
+"You can add derived parameters using the `add_derived` method. The names "
+"of all derived parameters can be obtained with `derived_keys`:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:130002
+msgid ""
+"You can add additional information using the `add_info` method. The names"
+" of all such entries can be obtained with `info_keys`:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:150002
+#, python-brace-format
+msgid ""
+"The list of basic parameter names can be obtained using `parameter_keys`."
+" These are all {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` objects:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:170002
+msgid "Adding Parameter Constraints"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:170004
+msgid ""
+"You can add equality constraints to basic parameters using the "
+"`add_equal_constraints` method:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:190002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.300, \\infty] \\\\\n"
+"\\mathrm{b} & : & 2.000 \\in [0.200, \\infty] \\\\\n"
+"\\mathrm{c} & : & \\lgroup 2.000,\\ \\mathrm{constraint} \\rgroup\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:200002
+msgid "Parameters with equality constraints are removed from `parameter_keys`:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:220002
+msgid ""
+"You can remove previously added equality constraints using the "
+"`del_equal_constraints` method. The corresponding parameters will then "
+"reappear in `parameter_keys` and return to their original unconstrained "
+"state:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240002
+msgid "Parameter Priority"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240004
+msgid ""
+"In the `Parameters` class, values are divided into basic parameters, "
+"constrained parameters, derived parameters, and additional information."
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240006
+msgid "Their priority, from highest to lowest, is:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240008
+msgid ""
+"constrained parameters > basic parameters > derived parameters > "
+"additional information"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240010
+msgid ""
+"That is, when retrieving a value, `Parameters` searches in "
+"`constraint_keys`, `parameter_keys`, `derived_keys`, and `info_keys` in "
+"that order."
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:240012
+msgid "An example is shown below:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:250002
+msgid "Create a parameter set and add `eps_ab` as additional information:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:270002
+msgid ""
+"Add `eps_ab` as a derived parameter. In this case, the retrieved value is"
+" the derived one:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:290002
+msgid ""
+"Add `eps_ab` directly as a basic parameter. In this case, the retrieved "
+"value is the basic parameter value:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:300002
+#: ../../source/tutorials/parameters.ipynb:340002
+msgid "0.400 \\in [-\\infty, \\infty]"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:310002
+msgid ""
+"Add `eps_ab` as a constrained parameter. In this case, the retrieved "
+"value is the constrained one:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:330002
+msgid ""
+"After removing the constraint, the retrieved value becomes the basic "
+"parameter value again:"
+msgstr ""
+

@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-26 13:52+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/parameters.ipynb:10004
+msgid "Working with the `Parameters` Class"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:10006
+#, python-brace-format
+msgid ""
+"`Gal3D` uses the {py:class}`Parameters "
+"<gal3d.optimization.parameter.Parameters>` class to manage and store "
+"model parameters."
+msgstr ""
+"`Gal3D` 使用 {py:class}`Parameters "
+"<gal3d.optimization.parameter.Parameters>` 类来管理和存储模型参数。"
+
+#: ../../source/tutorials/parameters.ipynb:20002
+msgid "Basic Usage"
+msgstr "基本用法"
+
+#: ../../source/tutorials/parameters.ipynb:30002
+msgid "We can define a set of parameters as follows:"
+msgstr "我们可以按如下方式定义一组参数："
+
+#: ../../source/tutorials/parameters.ipynb:40002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [-\\infty, \\infty] \\\\\n"
+"\\mathrm{b} & : & 2.000 \\in [-\\infty, \\infty] \\\\\n"
+"\\mathrm{c} & : & 1.000 \\in [-\\infty, \\infty]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:50002
+#, python-brace-format
+msgid ""
+"Each parameter value is represented by a {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` object."
+msgstr ""
+"每个参数值都由一个 {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` 对象表示。"
+
+
+#: ../../source/tutorials/parameters.ipynb:50004
+msgid ""
+"The lower bound (`lb`) and upper bound (`ub`) of each parameter can be "
+"specified explicitly. If they are not given, they default to negative "
+"infinity and positive infinity, respectively."
+msgstr ""
+"每个参数都可以显式指定下界（`lb`）和上界（`ub`）。"
+"若未指定，则默认分别为负无穷和正无穷。"
+
+#: ../../source/tutorials/parameters.ipynb:60002
+msgid "3.000 \\in [-\\infty, \\infty]"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:70002
+msgid "You can modify `lb` and `ub` directly:"
+msgstr "你可以直接修改 `lb` 和 `ub`："
+
+#: ../../source/tutorials/parameters.ipynb:90002
+msgid "You can also set bounds in batch using the `set_ub` and `set_lb` methods:"
+msgstr "你也可以使用 `set_ub` 和 `set_lb` 方法批量设置边界："
+
+#: ../../source/tutorials/parameters.ipynb:110002
+msgid "Adding Extra Information and Derived Parameters"
+msgstr "添加附加信息与派生参数"
+
+
+#: ../../source/tutorials/parameters.ipynb:110004
+msgid ""
+"You can add derived parameters using the `add_derived` method. The names "
+"of all derived parameters can be obtained with `derived_keys`:"
+msgstr ""
+"你可以使用 `add_derived` 方法添加派生参数。"
+"所有派生参数的名称可通过 `derived_keys` 获取："
+
+#: ../../source/tutorials/parameters.ipynb:130002
+msgid ""
+"You can add additional information using the `add_info` method. The names"
+" of all such entries can be obtained with `info_keys`:"
+msgstr ""
+"你可以使用 `add_info` 方法添加附加信息。"
+"所有此类条目的名称可通过 `info_keys` 获取："
+
+#: ../../source/tutorials/parameters.ipynb:150002
+#, python-brace-format
+msgid ""
+"The list of basic parameter names can be obtained using `parameter_keys`."
+" These are all {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` objects:"
+msgstr ""
+"基础参数名称列表可通过 `parameter_keys` 获取。"
+"这些条目均为 {py:class}`Parameter "
+"<gal3d.optimization.parameter.Parameter>` 对象："
+
+#: ../../source/tutorials/parameters.ipynb:170002
+msgid "Adding Parameter Constraints"
+msgstr "添加参数约束"
+
+#: ../../source/tutorials/parameters.ipynb:170004
+msgid ""
+"You can add equality constraints to basic parameters using the "
+"`add_equal_constraints` method:"
+msgstr ""
+"你可以使用 `add_equal_constraints` 方法为基础参数添加等式约束："
+
+#: ../../source/tutorials/parameters.ipynb:190002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.300, \\infty] \\\\\n"
+"\\mathrm{b} & : & 2.000 \\in [0.200, \\infty] \\\\\n"
+"\\mathrm{c} & : & \\lgroup 2.000,\\ \\mathrm{constraint} \\rgroup\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:200002
+msgid "Parameters with equality constraints are removed from `parameter_keys`:"
+msgstr "带有等式约束的参数会从 `parameter_keys` 中移除："
+
+#: ../../source/tutorials/parameters.ipynb:220002
+msgid ""
+"You can remove previously added equality constraints using the "
+"`del_equal_constraints` method. The corresponding parameters will then "
+"reappear in `parameter_keys` and return to their original unconstrained "
+"state:"
+msgstr ""
+"你可以使用 `del_equal_constraints` 方法移除之前添加的等式约束。"
+"对应参数会重新出现在 `parameter_keys` 中，并恢复到原始无约束状态："
+
+#: ../../source/tutorials/parameters.ipynb:240002
+msgid "Parameter Priority"
+msgstr "参数优先级"
+
+#: ../../source/tutorials/parameters.ipynb:240004
+msgid ""
+"In the `Parameters` class, values are divided into basic parameters, "
+"constrained parameters, derived parameters, and additional information."
+msgstr ""
+"在 `Parameters` 类中，数值被划分为基础参数、约束参数、派生参数和附加信息。"
+
+#: ../../source/tutorials/parameters.ipynb:240006
+msgid "Their priority, from highest to lowest, is:"
+msgstr "它们的优先级从高到低为："
+
+#: ../../source/tutorials/parameters.ipynb:240008
+msgid ""
+"constrained parameters > basic parameters > derived parameters > "
+"additional information"
+msgstr "约束参数 > 基础参数 > 派生参数 > 附加信息"
+
+#: ../../source/tutorials/parameters.ipynb:240010
+msgid ""
+"That is, when retrieving a value, `Parameters` searches in "
+"`constraint_keys`, `parameter_keys`, `derived_keys`, and `info_keys` in "
+"that order."
+msgstr ""
+"也就是说，在获取某个值时，`Parameters` 会按 "
+"`constraint_keys`、`parameter_keys`、`derived_keys`、`info_keys` 的顺序进行查找。"
+
+#: ../../source/tutorials/parameters.ipynb:240012
+msgid "An example is shown below:"
+msgstr "示例如下："
+
+#: ../../source/tutorials/parameters.ipynb:250002
+msgid "Create a parameter set and add `eps_ab` as additional information:"
+msgstr ""
+
+#: ../../source/tutorials/parameters.ipynb:270002
+msgid ""
+"Add `eps_ab` as a derived parameter. In this case, the retrieved value is"
+" the derived one:"
+msgstr "创建一个参数集，并将 `eps_ab` 作为附加信息加入："
+
+#: ../../source/tutorials/parameters.ipynb:290002
+msgid ""
+"Add `eps_ab` directly as a basic parameter. In this case, the retrieved "
+"value is the basic parameter value:"
+msgstr ""
+"将 `eps_ab` 添加为派生参数。此时读取到的值为派生值："
+
+#: ../../source/tutorials/parameters.ipynb:300002
+#: ../../source/tutorials/parameters.ipynb:340002
+msgid "0.400 \\in [-\\infty, \\infty]"
+msgstr ""
+"将 `eps_ab` 直接添加为基础参数。此时读取到的值为基础参数值："
+
+#: ../../source/tutorials/parameters.ipynb:310002
+msgid ""
+"Add `eps_ab` as a constrained parameter. In this case, the retrieved "
+"value is the constrained one:"
+msgstr ""
+"将 `eps_ab` 添加为约束参数。此时读取到的值为约束值："
+
+#: ../../source/tutorials/parameters.ipynb:330002
+msgid ""
+"After removing the constraint, the retrieved value becomes the basic "
+"parameter value again:"
+msgstr ""
+"移除该约束后，读取到的值会再次变为基础参数值："
+

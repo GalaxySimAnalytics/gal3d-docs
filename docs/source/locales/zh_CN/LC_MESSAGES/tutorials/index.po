@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-31 18:54+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/index.rst:15
+msgid "Quick Start"
+msgstr "快速开始"
+
+#: ../../source/tutorials/index.rst:15
+msgid "Step-by-Step Workflow"
+msgstr "分步工作流程"
+
+#: ../../source/tutorials/index.rst:15
+msgid "Deeper Dives"
+msgstr "深入探索"
+
+#: ../../source/tutorials/index.rst:4
+msgid "Gal3D Tutorials"
+msgstr "Gal3D 教程"
+
+#: ../../source/tutorials/index.rst:6
+msgid ""
+"This section provides practical tutorials to help you get started with "
+"Gal3D and become familiar with its main features and workflows."
+msgstr ""
+"本节提供实用教程，帮助你开始使用 Gal3D，并熟悉其主要功能和工作流程。"
+
+#: ../../source/tutorials/index.rst:9
+msgid ""
+":doc:`Quick Start <quick_start>` introduces the most basic usage patterns"
+" and examples."
+msgstr ""
+":doc:`快速开始 <quick_start>` 介绍了最基本的使用方式和示例。"
+
+#: ../../source/tutorials/index.rst:11
+msgid ""
+":doc:`Step-by-Step Workflow <step_by_step>` walks through a complete "
+"model-fitting workflow in detail."
+msgstr ""
+":doc:`分步工作流程 <step_by_step>` 详细讲解了一个完整的模型拟合流程。"
+
+#: ../../source/tutorials/index.rst:13
+msgid ""
+":doc:`Deeper Dives <deeper_dives>` collects more focused examples and "
+"discussions on specific topics."
+msgstr ""
+":doc:`深入探索 <deeper_dives>` 汇集了针对特定主题的更深入示例和讨论。"
+

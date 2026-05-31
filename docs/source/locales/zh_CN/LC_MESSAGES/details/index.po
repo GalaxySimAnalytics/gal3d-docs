@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: 2026-05-31 18:37+0800\n"
+"Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/details/index.rst:14
+msgid "Density Estimation"
+msgstr "密度估计"
+
+#: ../../source/details/index.rst:14
+msgid "Uniform Sampling on the Sphere"
+msgstr "球面上的均匀采样"
+
+#: ../../source/details/index.rst:14
+msgid "Monotonic Smooth Interpolation"
+msgstr "单调平滑插值"
+
+#: ../../source/details/index.rst:14
+msgid "Superellipsoid Functions"
+msgstr "超椭球函数"
+
+#: ../../source/details/index.rst:4
+msgid "Implementation Details"
+msgstr "实现细节"
+
+#: ../../source/details/index.rst:6
+msgid ""
+"This section introduces the algorithms and implementation principles "
+"behind the core steps of ``Gal3D``."
+msgstr ""
+"本节介绍 ``Gal3D`` 核心步骤背后的算法及其实现原理。"
+
+#: ../../source/details/index.rst:8
+msgid ""
+":doc:`Density Estimation <density_estimation>` describes the density "
+"estimation methods."
+msgstr ""
+":doc:`密度估计 <density_estimation>` 介绍了密度估计方法。"
+
+#: ../../source/details/index.rst:9
+msgid ""
+":doc:`Uniform Sampling on the Sphere <spherical_sampling>` explains how "
+"uniform spherical sampling is implemented."
+msgstr ""
+":doc:`球面上的均匀采样 <spherical_sampling>` 解释了如何实现球面均匀采样。"
+
+#: ../../source/details/index.rst:10
+msgid ""
+":doc:`Monotonic Smooth Interpolation <monotonic_ray>` presents the "
+"implementation of globally monotonic interpolation."
+msgstr ""
+":doc:`单调平滑插值 <monotonic_ray>` 展示了全局单调插值的实现方法。"
+
+#: ../../source/details/index.rst:11
+msgid ""
+":doc:`Superellipsoid Functions <generalized_ellipsoid>` shows the "
+"mathematical description and applications of the superellipsoid model."
+msgstr ""
+":doc:`超椭球函数 <generalized_ellipsoid>` 展示了超椭球模型的数学描述及其应"
+"用。"
+

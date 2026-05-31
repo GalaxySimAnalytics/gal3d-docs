@@ -1,0 +1,549 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/step_by_step.ipynb:10004
+msgid "Step-by-Step Workflow"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:10006
+#, python-brace-format
+msgid ""
+"`Gal3D` mainly uses the {py:class}`Gal3DAnalyzer "
+"<gal3d.analyzer.Gal3DAnalyzer>` class to build 3D galaxy models. "
+"Initializing {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` "
+"requires the following components:"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:10008
+#, python-brace-format
+msgid ""
+"{py:class}`Particles <gal3d.point.Particles>`, which initializes the "
+"particle data and provides density estimates at arbitrary positions;"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:10009
+#, python-brace-format
+msgid ""
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`, which "
+"constructs a smoothed density field and its associated interpolators from"
+" the particle data;"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:10010
+#, python-brace-format
+msgid ""
+"{py:class}`Structure3D <gal3d.shape.Structure3D>`, which defines the "
+"target shape, the error function, and related settings;"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:10011
+#, python-brace-format
+msgid ""
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>`, which "
+"performs the parameter optimization."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:20004
+msgid "Particle Initialization"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:20006
+msgid ""
+"The goal of particle initialization is to enable density estimation at "
+"arbitrary positions from a particle distribution defined by positions and"
+" masses."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:20008
+#, python-brace-format
+msgid ""
+"This section shows how to initialize the particle positions and masses "
+"and construct a density-query object. The main class used here is "
+"{py:class}`Particles <gal3d.point.Particles>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:20010
+msgid ""
+"To initialize the particle data, you need to provide the particle "
+"positions (`pos`) and masses (`mass`). As in the previous examples, we "
+"use particle data from a galaxy in the TNG50-1 simulation."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:40002
+msgid "Initializing the `Particles` Class"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:40004
+#, python-brace-format
+msgid ""
+"Use the {py:class}`Particles <gal3d.point.Particles>` class to initialize"
+" the particle positions and masses. The position array `pos` has shape "
+"`(N, 3)`, and the mass array `mass` has shape `(N,)`, where `N` is the "
+"number of particles."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:40008
+#, python-brace-format
+msgid ""
+"For a more detailed introduction to {py:class}`Particles "
+"<gal3d.point.Particles>`, including usage examples, see {ref}`Working "
+"with Particle Classes <particles>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:70004
+msgid "Constructing the Density Field"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:70006
+msgid ""
+"The purpose of this step is to build a density field once a density "
+"estimator is available for arbitrary positions. Because direct density "
+"queries can be computationally expensive, `Gal3D` constructs an "
+"intermediate field representation to reduce the cost of repeated "
+"evaluations."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:70008
+#, python-brace-format
+msgid ""
+"Before constructing the density field, the particles must already be "
+"initialized so that the density estimator is available. See "
+"{ref}`Particle Initialization <particle-initialization>` for that step."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:70010
+#, python-brace-format
+msgid ""
+"This section focuses on building the density field with the "
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>` class."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:80002
+#, python-brace-format
+msgid ""
+"The `Sph` in {py:class}`SphField "
+"<gal3d.field.spherical_field.field.SphField>` stands for *spherical*."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:80004
+msgid ""
+"The basic idea of `SphField` is to cast rays outward from the center, "
+"sample how the density varies along each ray, and construct a radial "
+"density interpolator for each direction."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:80006
+msgid "Directions of the Density Probes"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:80008
+#, python-brace-format
+msgid ""
+"Pass the initialized {py:class}`Particles <gal3d.point.Particles>` object"
+" to {py:class}`SphField <gal3d.field.spherical_field.field.SphField>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:80010
+msgid ""
+"At the same time, specify the number of density probes and the sampling "
+"method used to choose their directions."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:100004
+msgid ""
+"In most cases, `ray_method='fibonacci'` provides more uniform angular "
+"sampling than other methods."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:100006
+#, python-brace-format
+msgid ""
+"See {ref}`Uniform Sampling on the Sphere <spherical-sampling>` for a more"
+" detailed discussion of the Fibonacci method."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:100009
+#, python-brace-format
+msgid ""
+"`particles` s the initialized particle object, that is, an instance "
+"of{py:class}`Particles <gal3d.point.Particles>`，"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:100010
+msgid ""
+"`num_ray` is the number of density probes. Each probe traces how the "
+"density changes outward from the center along one direction. The default "
+"value is `1024`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:100011
+msgid ""
+"`ray_method` specifies how the probe directions are sampled. In most "
+"cases, these directions should be distributed uniformly over the sphere. "
+"The default is `fibonacci`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:110002
+msgid "Radial Range of the Density Probes"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:110004
+#, python-brace-format
+msgid ""
+"After choosing the direction of each density probe, we need to define its"
+" radial range. This is done with {py:meth}`build_field_boundary "
+"<gal3d.field.spherical_field.field.SphField.build_field_boundary>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:110006
+msgid ""
+"Both the minimum and maximum radii of each probe must be specified. Here,"
+" we set the minimum radius to `0.2` and the maximum radius to the point "
+"where the density falls to `2e4`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:130002
+msgid ""
+"After this step, you can inspect `field.inner_r` and `field.outer_r`. "
+"These are one-dimensional arrays that give the inner and outer radius of "
+"each density probe."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:150002
+msgid "The figure below shows the distributions of the inner and outer radii."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:170002
+msgid "Sampling the Radial Density Profile"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:170004
+#, python-brace-format
+msgid ""
+"Once the probe directions and radial ranges have been defined, each probe"
+" must sample the density along its radial interval in order to recover "
+"the radial density profile. This is done with "
+"{py:meth}`build_profile_sample "
+"<gal3d.field.spherical_field.field.SphField.build_profile_sample>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:170006
+msgid ""
+"Here we set `num_p=500` and `step_mode='log'`, which means that 500 "
+"logarithmically spaced sample points are used along each direction to "
+"trace the radial density distribution."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:190002
+msgid "Interpolating the Radial Density Profile"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:190004
+#, python-brace-format
+msgid ""
+"After sampling the radial density profile along each probe direction, the"
+" next step is to construct interpolators from those samples. This is done"
+" with {py:meth}`build_profile_interpolator "
+"<gal3d.field.spherical_field.field.SphField.build_profile_interpolator>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:190006
+msgid ""
+"Here we set `interpolator_method='LU'`, which uses the Lower-Upper (LU) "
+"method for monotonic interpolation. The option `is_decreasing=True` "
+"specifies that the interpolator should be monotonic decreasing."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:190011
+#, python-brace-format
+msgid ""
+"See {ref}`Monotonic Smooth Interpolation <monotonic-ray>` for details of "
+"this implementation."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:210002
+msgid ""
+"At this point, we have obtained a monotonic decreasing radial density "
+"interpolator for each probe direction."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:220002
+msgid "Radial Distribution of Iso-Density Surfaces"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:220004
+msgid ""
+"The purpose of this step is to estimate the radial distribution of iso-"
+"density surfaces and construct the corresponding interpolator, so that "
+"parameter ranges can be constrained more effectively during model "
+"fitting."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:240002
+msgid ""
+"The figure below shows the estimated radial iso-density profile (black "
+"points), the corresponding interpolation (red line), and the relative "
+"error (green line)."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:260004
+msgid "Shape Setup"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:260006
+msgid "The purpose of this step is to define the target shape before fitting."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:260008
+#, python-brace-format
+msgid ""
+"This section focuses on shape setup using the {py:class}`Structure3D "
+"<gal3d.shape.Structure3D>` class."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:270002
+msgid "Initializing the Shape"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:270004
+#, python-brace-format
+msgid ""
+"To initialize {py:class}`Structure3D <gal3d.shape.Structure3D>`, you need"
+" to specify a shape function, a coordinate system, an error function, and"
+" an error-evaluation method."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:270006
+msgid ""
+"You can inspect all available options with "
+"`Structure3D.available_options()`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:300002
+msgid ""
+"Here we use `EulerShift`, which represents 3D coordinate transformations "
+"using Euler angles and translations."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:300004
+msgid ""
+"We also use `Ellipsoid_S`, an ellipsoidal shape function with shape "
+"indices; `sums_dev_rscale`, a distance-squared-weighted error function; "
+"and `isodensity_curve_dcall`, which evaluates distances to iso-density "
+"surfaces."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:300006
+msgid ""
+"In the printed representation of `structure`, you can see `EulerShift` "
+"and `Ellipsoid_S`, followed by their corresponding parameters and values."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:310002
+#, python-brace-format
+msgid ""
+"\n"
+"\\large\n"
+"\\begin{array}{r c l}\n"
+"& \\mathbf{Coordinate} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{EulerShift} \\\\\n"
+"\\text{Func} & : & \\ \\mathbf{X}'=\\mathbf{X}\\,R_{zyx}^{\\mathsf "
+"T}(\\alpha,\\beta,\\gamma)-\\mathbf{1}_n\\,\\mathbf{c} \\\\\n"
+"\\text{Param (6)} & : & x_c=0.00,\\ y_c=0.00,\\ z_c=0.00,\\ "
+"\\alpha=0.00,\\ \\beta=0.00,\\ \\gamma=0.00 \\\\\n"
+"\\text{Derived\\ param} & : & \\ "
+"\\mathbf{c}=\\begin{bmatrix}x_c&y_c&z_c\\end{bmatrix},\\ \\ "
+"R_{zyx}(\\alpha,\\beta,\\gamma)=R_{z}(\\alpha)\\,R_{y}(\\beta)\\,R_{x}(\\gamma)"
+" \\\\\n"
+"& \\mathbf{Geometry} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{SuperEllipsoid} \\\\\n"
+"\\text{Func} & : & ([(\\frac{x}{a})^2]^{S_a} + [(\\frac{y}{b})^2]^{S_b} +"
+" [(\\frac{z}{c})^2]^{S_c}) \\\\\n"
+"\\text{Param (6)} & : & a=3.00,\\ \\epsilon_{ab}=0.20,\\ "
+"\\epsilon_{bc}=0.50,\\ S_a=1.00,\\ S_b=1.00,\\ S_c=1.00 \\\\\n"
+"\\text{Derived\\ param} & : & b = a(1 - \\epsilon_{ab})=2.40,\\ c = b(1 -"
+" \\epsilon_{bc})=1.20 \\\\\n"
+"& \\mathbf{Error} & \\\\\n"
+"\\mathrm{Err func}   & : & \\mathrm{sums\\_dev\\_rscale} \\\\\n"
+"\\mathrm{Err method} & : & \\mathrm{isodensity\\_curve\\_dcall} \\\\\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:320004
+#, python-brace-format
+msgid ""
+"See {ref}`Superellipsoids with Different Shape Parameters <ellipsoid-"
+"shape-show>` for visual examples of ellipsoids with different parameter "
+"combinations."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:320006
+msgid ""
+"The left panel below shows the `z=0` slice for the standard ellipsoid "
+"case with shape indices `sa=1` and `sb=1`. Different colors correspond to"
+" different values of `eps_ab`, illustrating how the ellipticity changes."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:320008
+msgid ""
+"The right panel shows how the shape indices affect the geometry. With "
+"`eps_ab = 0.2`, different values of the shape indices produce different "
+"shapes. When `sa=sb=1`, the result is a standard ellipsoid, and the slice"
+" is a standard ellipse (black solid line). When `sa=sb=0.5`, the slice "
+"becomes diamond-like (black dotted line). When `sa=sb=2`, the slice "
+"becomes boxier and more rectangular (black dashed line)."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:340002
+msgid "Shape Parameters"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:340004
+#, python-brace-format
+msgid ""
+"`structure.parameters` is an instance of {py:class}`Parameters "
+"<gal3d.optimization.parameter.Parameters>`, which stores all adjustable "
+"parameters and their constraints."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:340008
+#, python-brace-format
+msgid ""
+"`parameters` supports lower and upper bounds as well as additional "
+"constraints. You can set lower and upper bounds with "
+"{py:meth}`Parameters.set_lb "
+"<gal3d.optimization.parameter.Parameters.set_lb>` and "
+"{py:meth}`Parameters.set_ub "
+"<gal3d.optimization.parameter.Parameters.set_ub>`. You can also add "
+"equality constraints with {py:meth}`Parameters.add_equal_constraints "
+"<gal3d.optimization.parameter.Parameters.add_equal_constraints>`. See "
+"{ref}`Working with Parameter Classes <parameters>` for more detailed "
+"examples."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:350002
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{array}{r c l}\n"
+"\\mathbf{Parameters} & & \\\\\n"
+"\\mathrm{x} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{y} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{z} & : & 0.000 \\in [-0.200, 0.200] \\\\\n"
+"\\mathrm{ang1} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{ang2} & : & 0.000 \\in [-1.571, 1.571] \\\\\n"
+"\\mathrm{ang3} & : & 0.000 \\in [-3.142, 3.142] \\\\\n"
+"\\mathrm{a} & : & 3.000 \\in [0.100, \\infty] \\\\\n"
+"\\mathrm{eps\\_ab} & : & 0.200 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{eps\\_bc} & : & 0.500 \\in [0.001, 0.999] \\\\\n"
+"\\mathrm{sa} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sb} & : & 1.000 \\in [0.200, 2.000] \\\\\n"
+"\\mathrm{sc} & : & 1.000 \\in [0.200, 2.000]\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:360002
+msgid ""
+"You can access the lower and upper bounds of all parameters through the "
+"`parameters.lb` and `parameters.ub` attributes, both of which return "
+"dictionaries."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:390002
+msgid ""
+"You can also inspect the lower and upper bounds of a specific parameter, "
+"for example with `parameters['eps_bc'].lb` and `parameters['eps_bc'].ub`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:410004
+msgid "Optimizer Setup"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:410006
+#, python-brace-format
+msgid ""
+"The purpose of this step is to choose and configure an optimizer for "
+"model fitting. Here we use the {py:class}`Optimizer "
+"<gal3d.optimization.optimizer.Optimizer>` class."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:410008
+#, python-brace-format
+msgid ""
+"You can list the available optimizer plugins with "
+"{py:meth}`Optimizer.available_plugins "
+"<gal3d.optimization.optimizer.Optimizer.available_plugins>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:430002
+#, python-brace-format
+msgid ""
+"You can then retrieve a specific optimizer plugin with "
+"{py:meth}`Optimizer.get_plugin "
+"<gal3d.optimization.optimizer.Optimizer.get_plugin>`. This returns a "
+"class derived from {py:class}`OptimizerBase "
+"<gal3d.optimization.optimizer.OptimizerBase>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:450002
+#, python-brace-format
+msgid ""
+"You can then inspect the optimization algorithms provided by this plugin "
+"with {py:meth}`OptimizerBase.available_algorithm "
+"<gal3d.optimization.optimizer.OptimizerBase.available_algorithm>` ."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:470002
+msgid ""
+"Next, choose one of the available algorithms, for example `\"trf\"`, and "
+"use it to create an optimizer instance."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:490003
+#, python-brace-format
+msgid ""
+"Additional optimizer settings can be configured with "
+"{py:meth}`OptimizerBase.set_options "
+"<gal3d.optimization.optimizer.OptimizerBase.set_options>`."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:500002
+msgid "Running the Fit"
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:500004
+#, python-brace-format
+msgid ""
+"After initializing {py:class}`Particles <gal3d.point.Particles>`, "
+"{py:class}`SphField <gal3d.field.spherical_field.field.SphField>`, "
+"{py:class}`Structure3D <gal3d.shape.Structure3D>`, and "
+"{py:class}`Optimizer <gal3d.optimization.optimizer.Optimizer>`, pass them"
+" to {py:class}`Gal3DAnalyzer <gal3d.analyzer.Gal3DAnalyzer>` to start the"
+" fitting process."
+msgstr ""
+
+#: ../../source/tutorials/step_by_step.ipynb:530002
+#, python-brace-format
+msgid ""
+"You can then run the fit with {py:meth}`Gal3DAnalyzer.fit "
+"<gal3d.analyzer.Gal3DAnalyzer.fit>`."
+msgstr ""
+

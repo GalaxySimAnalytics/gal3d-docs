@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026
+# This file is distributed under the same license as the Gal3D package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gal3D 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/tutorials/quick_start.ipynb:10002
+msgid "Quick Start"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:10005
+msgid ""
+"This tutorial walks through the basic workflow for building a 3D galaxy "
+"morphology model with Gal3D."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:10007
+msgid ""
+"This page is generated from a Jupyter notebook, which you can download "
+"using the link in the upper-right corner."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:20002
+msgid "Extracting the Data"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:20005
+msgid ""
+"We use the [AnastrisTNG](https://github.com/wx-ys/AnastrisTNG) library to"
+" extract the positions (`pos`) and masses (`mass`) of stellar particles "
+"for a galaxy in the TNG50-1 simulation."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:20007
+msgid "These data are used in the 3D modeling example below."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:40003
+msgid ""
+"To demonstrate the Gal3D workflow, we use a galaxy extracted from "
+"TNG50-1. To apply the same workflow to other data sets, simply replace "
+"the particle positions (`pos`) and masses (`mass`). Here, `pos` should "
+"have shape `(N, 3)`, and `mass` should have shape `(N,)`."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50002
+msgid "Data Initialization"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50007
+#, python-brace-format
+msgid ""
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>` "
+"automates several steps, including {ref}`particle initialization "
+"<particle-initialization>`, {ref}`density-field construction <density-"
+"field>`, {ref}`shape setup <shape-setting>`, and {ref}`optimizer "
+"configuration <optimization>`. If you want finer control over each step, "
+"see {ref}`Step-by-Step Workflow <step_by_step>`."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50009
+#, python-brace-format
+msgid ""
+"Pass the particle positions (``pos``) and masses (``mass``) to the "
+"{py:meth}`Gal3DAnalyzer.analyze <gal3d.analyzer.Gal3DAnalyzer.analyze>` "
+"to initialize the 3D data."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50011
+msgid ""
+"``recenter`` controls whether the particles are recentered before "
+"analysis."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50012
+#, python-format
+msgid ""
+"``inner_frac`` sets the inner boundary at the radius where the density "
+"falls to 90% of the central density."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:50013
+msgid "``outer`` and ``outer_mode`` control how the outer boundary is defined."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:70002
+msgid "Fitting the Model"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:70005
+msgid ""
+"After initialization, the next step is to fit a model to the 3D galaxy "
+"structure."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:70007
+#, python-brace-format
+msgid ""
+"We use {py:meth}`Gal3DAnalyzer.fit <gal3d.analyzer.Gal3DAnalyzer.fit>` to"
+" fit a set of nested ellipsoids to the particle distribution. Setting "
+"`num_step=300` generates 300 nested ellipsoids. The default value is "
+"`200`."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:90002
+msgid ""
+"You may see a `PoorUniformityError` warning. This means that the sampling"
+" points are not sufficiently uniform at certain radii, which may reduce "
+"the accuracy of the fit. Those radii are therefore skipped."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:100002
+msgid "Fitting Results"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:100007
+#, python-brace-format
+msgid ""
+"For more information about the {py:class}`ModelResult "
+"<gal3d.optimization.result.ModelResult>` class, see the {ref}`Fitting and"
+" Optimization <optimization>` documentation."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:100009
+#, python-brace-format
+msgid ""
+"After fitting, ``res_ellipsoid_s`` contains the parameter values for all "
+"nested ellipsoids. It is a {py:class}`ModelResult "
+"<gal3d.optimization.result.ModelResult>` object that stores the fitted "
+"model, model parameters, goodness-of-fit diagnostics, and related "
+"quantities."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:100013
+msgid "Use ``res_ellipsoid_s.keys()`` to inspect the main parameter keys."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:120003
+msgid ""
+"Use `res_ellipsoid_s.available_keys()` to view all available keys, "
+"including both parameter keys and other related quantities."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:140002
+msgid "You can also display `res_ellipsoid_s` directly as a table."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:160002
+msgid ""
+"You can access the nth ellipsoid with `res_ellipsoid_s[n]` and inspect "
+"its detailed properties."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:170002
+#, python-brace-format
+msgid ""
+"\n"
+"\\large\n"
+"\\begin{array}{r c l}\n"
+"& \\mathbf{Coordinate} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{ShiftEuler} \\\\\n"
+"\\text{Func} & : & "
+"\\mathbf{X}'=(\\mathbf{X}-\\mathbf{1}_n\\,\\mathbf{c})\\,R_{zyx}^{\\mathsf"
+" T}(\\alpha,\\beta,\\gamma) \\\\\n"
+"\\text{Param (6)} & : & x_c=-0.03,\\ y_c=0.04,\\ z_c=0.01,\\ "
+"\\alpha=-1.11,\\ \\beta=-0.02,\\ \\gamma=-0.01 \\\\\n"
+"\\text{Derived\\ param} & : & \\ "
+"\\mathbf{c}=\\begin{bmatrix}x_c&y_c&z_c\\end{bmatrix},\\ \\ "
+"R_{zyx}(\\alpha,\\beta,\\gamma)=R_{z}(\\alpha)\\,R_{y}(\\beta)\\,R_{x}(\\gamma)"
+" \\\\\n"
+"& \\mathbf{Geometry} & \\\\\n"
+"\\text{Name} & : & \\large \\mathrm{SuperEllipsoid} \\\\\n"
+"\\text{Func} & : & ([(\\frac{x}{a})^2]^{S_a} + [(\\frac{y}{b})^2]^{S_b} +"
+" [(\\frac{z}{c})^2]^{S_c}) \\\\\n"
+"\\text{Param (6)} & : & a=0.42,\\ \\epsilon_{ab}=0.40,\\ "
+"\\epsilon_{bc}=0.57,\\ S_a=1.83,\\ S_b=1.74,\\ S_c=0.33 \\\\\n"
+"\\text{Derived\\ param} & : & b = a(1 - \\epsilon_{ab})=0.25,\\ c = b(1 -"
+" \\epsilon_{bc})=0.11 \\\\\n"
+"& \\mathbf{Error} & \\\\\n"
+"\\mathrm{Err func}   & : & \\mathrm{sums\\_dev\\_rscale} \\\\\n"
+"\\mathrm{Err method} & : & \\mathrm{isodensity\\_curve\\_dcall} \\\\\n"
+"\\end{array}\n"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:180002
+msgid "You can also examine how the shape parameters vary with radius."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:210002
+msgid "Result Analysis"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:210005
+#, python-brace-format
+msgid ""
+"After obtaining the fitting results, you can analyze them using the "
+"{py:class}`Characterizer "
+"<gal3d.characterization.characterizer.Characterizer>` class."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:210007
+#, python-brace-format
+msgid ""
+"Use {py:obj}`Characterizer.available_plugins "
+"<gal3d.characterization.characterizer.Characterizer.available_plugins>` "
+"to list all available characterization plugins. For example, the "
+"{py:class}`Bar "
+"<gal3d.characterization.characterizer_plugins.galaxy_bar.Bar>` plugin can"
+" be used to measure the morphological properties of galactic bars."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:230002
+msgid ""
+"Use `Characterizer.get_plugin('Bar')` to obtain the Bar plugin and apply "
+"it to the fitted result:"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:250002
+msgid ""
+"`flag=1` indicates that a bar is detected. `R_bar` gives the semi-major-"
+"axis length of the bar."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:260002
+msgid "Visualization"
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:260005
+msgid ""
+"Gal3D also provides visualization tools for direct comparison between the"
+" model and the data."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:260007
+#, python-brace-format
+msgid ""
+"The {py:class}`ModelProjector "
+"<gal3d.visualization.model_projector.ModelProjector>` plugin projects the"
+" 3D model onto a 2D plane, and {py:class}`ProjectorLineIntegration "
+"<gal3d.visualization.model_projector_plugins.projector_line_integration.ProjectorLineIntegration>`"
+" supports line-of-sight integrated projections."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:260009
+#, python-brace-format
+msgid ""
+"The helper function {py:func}`show_image_model_residual "
+"<gal3d.visualization.data_model_residual.show_image_model_residual>` "
+"displays the projected data, the projected model, and their residuals "
+"side by side for easy comparison."
+msgstr ""
+
+#: ../../source/tutorials/quick_start.ipynb:270005
+msgid ""
+"To speed up the computation, you can increase the number of threads. Set "
+"this according to the number of CPU cores available on your machine; for "
+"example:"
+msgstr ""
+
