@@ -29,12 +29,6 @@ live-zh:
 i18n:
 	$(MAKE) -C docs i18n-all
 
-# Compile existing translation catalogs (.po -> .mo)
-compile-translations:
-	$(SPHINXINTL) build
-
-.PHONY: compile-translations
-
 clean:
 	rm -rf docs/build
 

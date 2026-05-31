@@ -72,6 +72,13 @@ i18n-all:
 
 .PHONY: i18n-en i18n-zh i18n-all
 
+# Compile existing translation catalogs (.po -> .mo)
+compile-translations:
+	$(SPHINXINTL) build
+
+.PHONY: compile-translations
+
+
 # Live preview of English documentation with auto-reload
 autobuild-en:
 	SPHINX_LANGUAGE=en $(SPHINXAUTOBUILD) -b html -D language=en $(SOURCEDIR) $(BUILDDIR)/en
