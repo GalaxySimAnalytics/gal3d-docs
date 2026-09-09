@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gal3D 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"POT-Creation-Date: 2026-09-09 14:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Tutorials"
 msgstr ""
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Implementation Details"
 msgstr ""
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Reference"
 msgstr ""
 
@@ -81,31 +81,43 @@ msgstr ""
 #: ../../source/index.rst:37
 msgid ""
 "If you use Gal3D in your research or project, please cite the following "
-"reference. Formal publication information will be added once the "
-"corresponding paper is published."
+"paper."
 msgstr ""
 
-#: ../../source/index.rst:52
+#: ../../source/index.rst:39
+msgid ""
+"Lu, S., & Du, M. 2026, ApJ, 1008, 223. doi:`10.3847/1538-4357/ae994c "
+"<https://doi.org/10.3847/1538-4357/ae994c>`_"
+msgstr ""
+
+#: ../../source/index.rst:41
+msgid "BibTeX:"
+msgstr ""
+
+#: ../../source/index.rst:62
 msgid "Documentation Contents"
 msgstr ""
 
-#: ../../source/index.rst:54
+#: ../../source/index.rst:64
 msgid "This documentation is organized into three main parts:"
 msgstr ""
 
-#: ../../source/index.rst:56
+#: ../../source/index.rst:66
 msgid ""
 ":ref:`Tutorials <tutorials>`: basic usage, key features, and advanced "
 "examples."
 msgstr ""
 
-#: ../../source/index.rst:57
+#: ../../source/index.rst:67
 msgid ""
 ":ref:`Implementation Details <details>`: technical descriptions of the "
 "underlying methods and modules."
 msgstr ""
 
-#: ../../source/index.rst:58
+#: ../../source/index.rst:68
 msgid ":ref:`Reference <reference>`: the full API reference."
 msgstr ""
+
+#~ msgid "Lu, S., & Du, M. 2026, ApJ, 1008, 223. doi:10.3847/1538-4357/ae994c"
+#~ msgstr ""
 

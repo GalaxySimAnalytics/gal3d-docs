@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gal3D 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 12:51+0800\n"
+"POT-Creation-Date: 2026-09-09 14:14+0800\n"
 "PO-Revision-Date: 2026-05-26 12:58+0800\n"
 "Last-Translator: Shuai Lu <lushuai@stu.xmu.edu.cn>\n"
 "Language: zh_CN\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Tutorials"
 msgstr "教程"
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Implementation Details"
 msgstr "实现细节"
 
-#: ../../source/index.rst:60
+#: ../../source/index.rst:70
 msgid "Reference"
 msgstr "参考文档"
 
@@ -39,8 +39,8 @@ msgid ""
 "axis ratios, orientations, center offsets, and higher-order shape "
 "features."
 msgstr ""
-"欢迎阅读Gal3D文档！`Gal3D <https://github.com/GalaxySimAnalytics/gal3d>`_ 是一个对模拟中的星系进行三维形态建模的Python库。"
-"它可直接基于粒子数据测量形态特性随半径的变化，包括轴比、方向、中心偏移和高阶形状特征。"
+"欢迎阅读Gal3D文档！`Gal3D <https://github.com/GalaxySimAnalytics/gal3d>`_ "
+"是一个对模拟中的星系进行三维形态建模的Python库。它可直接基于粒子数据测量形态特性随半径的变化，包括轴比、方向、中心偏移和高阶形状特征。"
 
 #: ../../source/index.rst:6
 msgid "Installation"
@@ -74,7 +74,8 @@ msgid ""
 "axis ratios, orientations, center offsets, and higher-order shape "
 "features."
 msgstr ""
-"``Gal3D`` 旨在解决这个问题。它结合了密度场重建、径向采样和超椭球拟合来建模星系的三维等密度结构，并量化诸如轴比、方向、中心偏移和高阶形状特征等量。"
+"``Gal3D`` "
+"旨在解决这个问题。它结合了密度场重建、径向采样和超椭球拟合来建模星系的三维等密度结构，并量化诸如轴比、方向、中心偏移和高阶形状特征等量。"
 
 #: ../../source/index.rst:35
 msgid "Citation"
@@ -83,33 +84,41 @@ msgstr "引用"
 #: ../../source/index.rst:37
 msgid ""
 "If you use Gal3D in your research or project, please cite the following "
-"reference. Formal publication information will be added once the "
-"corresponding paper is published."
+"paper."
+msgstr "如果你在研究或项目中使用了 Gal3D，请引用以下论文。"
+
+#: ../../source/index.rst:39
+msgid ""
+"Lu, S., & Du, M. 2026, ApJ, 1008, 223. doi:`10.3847/1538-4357/ae994c "
+"<https://doi.org/10.3847/1538-4357/ae994c>`_"
 msgstr ""
-"如果你在研究或项目中使用了 Gal3D，请引用以下参考信息。"
-"待对应论文正式发表后，将补充正式发表信息。"
+"Lu, S., & Du, M. 2026, ApJ, 1008, 223. doi:`10.3847/1538-4357/ae994c "
+"<https://doi.org/10.3847/1538-4357/ae994c>`_"
 
+#: ../../source/index.rst:41
+msgid "BibTeX:"
+msgstr "BibTeX："
 
-#: ../../source/index.rst:52
+#: ../../source/index.rst:62
 msgid "Documentation Contents"
 msgstr "文档内容"
 
-#: ../../source/index.rst:54
+#: ../../source/index.rst:64
 msgid "This documentation is organized into three main parts:"
 msgstr "本文档分为三个主要部分："
 
-#: ../../source/index.rst:56
+#: ../../source/index.rst:66
 msgid ""
 ":ref:`Tutorials <tutorials>`: basic usage, key features, and advanced "
 "examples."
 msgstr ":ref:`教程 <tutorials>`: 基本用法、核心功能和高级示例。"
 
-#: ../../source/index.rst:57
+#: ../../source/index.rst:67
 msgid ""
 ":ref:`Implementation Details <details>`: technical descriptions of the "
 "underlying methods and modules."
 msgstr ":ref:`实现细节 <details>`: 底层方法和模块的技术描述。"
 
-#: ../../source/index.rst:58
+#: ../../source/index.rst:68
 msgid ":ref:`Reference <reference>`: the full API reference."
 msgstr ":ref:`参考文档 <reference>`: 完整的API参考。"

@@ -34,16 +34,26 @@ structure of galaxies and to quantify quantities such as axis ratios, orientatio
 Citation
 ========
 
-If you use Gal3D in your research or project, please cite the following reference.
-Formal publication information will be added once the corresponding paper is published.
+If you use Gal3D in your research or project, please cite the following paper.
+
+Lu, S., & Du, M. 2026, ApJ, 1008, 223. doi:`10.3847/1538-4357/ae994c <https://doi.org/10.3847/1538-4357/ae994c>`_
+
+BibTeX:
 
 ::
 
-    @software{gal3d_2026,
-      author = {Shuai Lu and Min Du},
-      title = {Gal3D},
+    @article{Lu_2026,
+      doi = {10.3847/1538-4357/ae994c},
+      url = {https://doi.org/10.3847/1538-4357/ae994c},
       year = {2026},
-      url = {https://github.com/GalaxySimAnalytics/gal3d}
+      month = {sep},
+      publisher = {The American Astronomical Society},
+      volume = {1008},
+      number = {2},
+      pages = {223},
+      author = {Lu, Shuai and Du, Min},
+      title = {Gal3D: Superellipsoid Modeling of Radial Three-dimensional Galaxy Structure in IllustrisTNG and EAGLE Simulations},
+      journal = {The Astrophysical Journal},
     }
 
 
