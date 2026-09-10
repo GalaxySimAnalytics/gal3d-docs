@@ -197,3 +197,40 @@ body {
     clear: both;
   }
 }
+
+/* Narrow-viewport sidebars (see _static/gal3d-sidebar.js).
+   The theme slides the sidebars in by setting the `open` attribute; these
+   rules only make sure the drawer sits above the page and its backdrop. */
+.gal3d-sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pst-primary-sidebar[open],
+#pst-secondary-sidebar[open] {
+  z-index: 1055;
+  overflow-y: auto;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35);
+}
+
+body.gal3d-sidebar-open {
+  overflow: hidden;
+}
+
+/* The theme hides the primary sidebar with `.pst-sidebar-hidden`, but scopes
+   that rule to `min-width: 992px` while the sidebar only becomes an off-canvas
+   drawer below 960px. In between, the sidebar is in the page flow and the rule
+   never applied, so the toggle appeared to do nothing. Below 992px the sidebar
+   is 25% wide, so that is how far it has to move. */
+@media (min-width: 960px) and (max-width: 991.98px) {
+  .bd-sidebar-primary.pst-sidebar-hidden {
+    margin-left: -25%;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

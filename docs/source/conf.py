@@ -219,6 +219,7 @@ html_static_path = ['_static']
 # These paths are either relative to html_static_path
 # or fully qualified paths (e.g. https://...)
 html_css_files = ['gal3d.css']
+html_js_files = ['gal3d-sidebar.js']
 
 #html_logo = "_static/logo.png" # set by dark/light logo in html_theme_options
 
